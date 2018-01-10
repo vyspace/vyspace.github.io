@@ -19,19 +19,23 @@
 		return def;
 	}
 	function getPageName() {
-		var	str = location.pathname.split('.')[0],
-			arr = /\w+/.exec(str);
-		if(arr && arr.length > 0) {
-			return arr[0];
+		var str = location.pathname;
+		if(/\w+\.html$/.test(str)) {
+			arr = /(\w+)\.html$/.exec(str);
+			if(arr && arr.length > 1) {
+				return arr[1];
+			}
+			else {
+				return null;
+			}
 		}
 		else {
-			return null
+			return 'index';
 		}
 
 	}
 	var pageName = getPageName();
 	if(pageName) {
-		document.title = 'vyspace-' + pageName;
 		getAjax('header.art', 'header', pageName).then(function(){
 			//alert(pageName)
 		})
