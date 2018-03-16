@@ -61,7 +61,19 @@
         <div id="gitment-container"></div>
       {% endif %}
     </div>
-
+    <link rel="stylesheet" href="/lib/gitment/default.css">
+    <script type="text/javascript" src="/lib/gitment/gitment.browser.js"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        owner: '{{theme.gitment.github_user}}',
+        repo: '{{theme.gitment.github_repo}}',
+        oauth: {
+          client_id: '{{theme.gitment.client_id}}',
+          client_secret: '{{theme.gitment.client_secret}}'
+        },
+      });
+      gitment.render('gitment-container')
+    </script>
   {% elseif theme.valine.appid and theme.valine.appkey %}
     <div class="comments" id="comments">
     </div>

@@ -3,7 +3,6 @@ title: Hadoop 开始
 categories:
   - hadoop
 tags:
-  - 技术
   - 大数据
 date: 2018-03-16 12:30:03
 ---
