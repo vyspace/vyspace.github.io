@@ -48,10 +48,10 @@ footer:
   since: 2016
 
   # Icon between year and copyright info.
-  icon: user
+  icon: copyright
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: VYSPACE STUDIO
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
   powered: false
@@ -93,7 +93,11 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  categories: /categories/ || th
+  nbatis: /categories/nbatis/ || database
+  reactjs: /categories/reactjs/ || file-text
+  koa: /categories/koa/ || tree
+  rn: /categories/rn/ || file
+  hadoop: /categories/hadoop/ || gears
   about: /about/ || user
   
   #archives: /archives/ || archive
@@ -154,7 +158,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/profile.jpg
 
 # Table Of Contents in the Sidebar
 toc:
