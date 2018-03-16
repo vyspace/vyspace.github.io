@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="技术,大数据," />
+  <meta name="keywords" content="大数据," />
 
 
 
@@ -86,14 +86,14 @@
 
 
 <meta name="description" content="前言这篇文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程 目录 服务器批量安装   hadoop服务安装   XGBoost分布式插件">
-<meta name="keywords" content="技术,大数据">
+<meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop 开始">
 <meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-start/index.html">
 <meta property="og:site_name" content="Evan Zheng">
 <meta property="og:description" content="前言这篇文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程 目录 服务器批量安装   hadoop服务安装   XGBoost分布式插件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T05:25:24.000Z">
+<meta property="og:updated_time" content="2018-03-16T06:04:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop 开始">
 <meta name="twitter:description" content="前言这篇文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程 目录 服务器批量安装   hadoop服务安装   XGBoost分布式插件">
@@ -355,6 +355,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hadoop/hadoop-start/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/hadoop/hadoop-start/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -405,8 +415,6 @@
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/技术/" rel="tag"># 技术</a>
           
             <a href="/tags/大数据/" rel="tag"># 大数据</a>
           
@@ -463,6 +471,26 @@
           
 
   
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+    <link rel="stylesheet" href="/lib/gitment/default.css">
+    <script type="text/javascript" src="/lib/gitment/gitment.browser.js"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        owner: 'vyspace',
+        repo: 'vyspace.github.io',
+        oauth: {
+          client_id: 'a9b17d47ebc093c430bf',
+          client_secret: '2f8c2b7ef753b1a6bdb2c42b400b2e911b5ddf21'
+        },
+      });
+      gitment.render('gitment-container')
+    </script>
+  
 
 
 
@@ -514,7 +542,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -536,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -740,6 +768,52 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'vyspace',
+            repo: 'vyspace.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '2f8c2b7ef753b1a6bdb2c42b400b2e911b5ddf21',
+            
+                client_id: 'a9b17d47ebc093c430bf'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
