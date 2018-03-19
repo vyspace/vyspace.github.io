@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Evan Zheng
-subtitle: 个人技术博客
-description: 这是一个以前端技术为主的技术博客，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...
+title: Evan Z
+subtitle: 个人技术站
+description: 这是一个以前端技术为主的技术博客，以原创为主，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...
 author: Evan Zheng
 language: zh-Hans
 timezone: Asia/Shanghai

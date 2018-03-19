@@ -246,14 +246,14 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-#reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
+reward_comment: 感谢您的支持，让我们努力作出更好的内容！
+wechatpay: /images/wechatpay.jpg
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -410,7 +410,7 @@ gitment:
   count: true # Show comments count in post meta area
   lazy: true # Comments lazy loading with a button
   cleanly: true # Hide 'Powered by ...' on footer, and more
-  language: # Force language, or auto switch by theme
+  language: zh-Hans  # Force language, or auto switch by theme
   github_user: vyspace # MUST HAVE, Your Github ID
   github_repo: vyspace.github.io # MUST HAVE, The repo you use to store Gitment comments
   client_id: a9b17d47ebc093c430bf # MUST HAVE, Github client id for the Gitment
