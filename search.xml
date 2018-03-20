@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hadoop 基础教程]]></title>
+    <url>%2Fhadoop%2Fhadoop-tutorial%2F</url>
+    <content type="text"><![CDATA[前言这一系列的文章主要介绍，Hadoop基础，说明各个工具的作用及用途，相互之间的关系。 目录 HDFS MapReduce Zookeeper 关系架构 Spark HBase Jupiter]]></content>
+      <categories>
+        <category>hadoop</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[分布式平台前期规划]]></title>
+    <url>%2Fhadoop%2Fhadoop-planning%2F</url>
+    <content type="text"><![CDATA[完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。 Quick Start主机名配置我将分别修改主机名为node0，node1，node2，node3。方便教程的讲述，也方便ssh中的操作。选择其中一台服务器，root用户登陆。 查看主机名1hostname 修改主机名 方法一：修改network文件，将HOSTNAME后面的值改为node0，重启后生效。 1vim /etc/sysconfig/network 方法二：修改当前的主机名，立即生效。 1hostname node0 配置hosts文件修改/etc/hosts文件，ip0为你自己机器的ip地址 1234ip0 node0ip1 node1ip2 node2ip3 node3 分发hosts文件将hosts文件分发到其他3台机器中，以保证所有服务器识别主机名。 123scp /etc/hosts root@node1:/etc/scp /etc/hosts root@node2:/etc/scp /etc/hosts root@node3:/etc/ 批量管理工具推荐如果你想更快，更省力的完成批量操作，有兴趣的童鞋可以安装Linux集群批量管理工具parallel-ssh(PSSH)，该工具需要Python环境，安装及操作点击此处链接，该教程中还是采用普通命令进行讲述。 配置免密码登录之后的服务器命令都需要免密码才能正常操作，这是一个必须而重要的步骤。我以node0批量操作其他服务器为例。此步骤需要在所有服务器中完成一边，以方便任意两台机器可以互相登陆。 创建本机的公钥与私钥12cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keyschmod 0600 ~/.ssh/authorized_keys 分发公钥到其他3台服务器我以node1为例 1scp ~/.ssh/id_rsa.pub root@node1:~/ 公钥追加进入node1的root账户的home目录下，运行如下命令。完成后，就可以从node0免密码登录到node1了。 1cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys 安装Java环境hadoop整套工具都以Java环境为基础，所以4台机器都需要安装。我们以node0为例。 查看是否安装1syum list installed | grep java 查看yum库中的Java安装包1yum -y list java* 安装Java我们以版本1.8.0为例 1yum -y install java-1.8.0-openjdk* 配置环境变量 将jdk文件夹移动到opt文件夹下 在/etc/profile文件中追加如下内容： 12export JAVA_HOME=/opt/jdk1.8.0_65export PATH=$JAVA_HOME/bin:$PATH JSP进程集工具集介绍在此篇基础工具集的规划中，我们主要安装Hadoop, ZooKeeper, HBase, Spark, Jupiter, Thrift。之后的教程中还会讲到Hive，MySQL等。每种工具都对应着一些Java进程，我们将规划这些进程分别部署到哪个服务器上。（话说，分布式应用，总不能把所有的进程都安装在一台服务器中吧。。。 - -!） 注：如果你对上述工具还不熟悉，请跳转到《Hadoop 基础教程》 JSP进程JSP是Java Virtual Machine Process Status Tool的缩写，在JVM中所有具有访问权限的Java进程的具体状态, 包括进程ID，进程启动的路径及启动参数等等，与Linux上的ps命令类似，只不过jps是用来显示java进程，可以把jps理解为ps的一个子集。 工具 JPS进程 ZooKeeper QuorumPeerMain, ZKFailoverController HDFS NameNode, DataNode, JournalNode MapReduce, Spark ResourceManager, NodeManager HBase HMaster, HRegionServer Thrift ThriftServer 系统进程 工具 系统进程 Jupiter jupiter-notebook 进程规划规划图根据上一篇的教程，我们准备了4台服务器，我们将把上面介绍的进程部署在这4台服务器中，方案如下： 图中勾选的位置对应着进程将部署在哪台服务器。 缩写对照表 缩写 进程全称 NN NameNode DN DataNode ZK QuorumPeerMain ZKFC ZKFailoverController JN JournalNode RM ResourceManager NM NodeManager HM HMaster HR HRegionServer TS ThriftServer 小结此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在《Hadoop 基础教程》中了解，此处不在赘述！）规划方案可以相应调整，下篇《Hadoop 部署》。]]></content>
+      <categories>
+        <category>hadoop</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[KOA 开始]]></title>
+    <url>%2Fkoa%2Fkoa-start%2F</url>
+    <content type="text"><![CDATA[更新中…]]></content>
+      <categories>
+        <category>koa</category>
+      </categories>
+      <tags>
+        <tag>NodeJS</tag>
+        <tag>全栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[服务器批量安装]]></title>
+    <url>%2Fhadoop%2Fhadoop-servers%2F</url>
+    <content type="text"><![CDATA[在安装Hadoop分布式系统之前，我们需要准备好服务器资源，如果采用云服务器，可以跳过此篇文章。批量无人值守安装操作系统，此次示例系统为CentOS7.x且推荐安装X window用户界面，后面会用到，服务器数量为4台，当然你可以使用大于等于3台以上数量的机器。 在4台机器中，随意选择1台安装服务。注：推荐直接使用实体机进行安装，或者非VMware的虚拟机，否则无人值守批量安装系统时可能会出错。 Quick Start安装FTP服务安装vsftp服务：1yum -y install vsftpd 启动vsftp服务：1systemctl start vsftpd.service 将准备好的系统iso文件加载到光驱如果使用虚拟机，则加载iso文件，如果是实体机可使用光盘或U盘加载系统文件。 将光驱文件挂在到ftp目录下：1mount /dev/cdrom /var/ftp/pub 测试FTP服务是否可以匿名登录，命令如下： 如果系统提示lftp服务未安装，安装lftp 1yum -y install lftp 进入lftp模式后会看到pub文件夹，如果没有，请关闭防火墙和selinux 关闭防火墙：systemctl stop firewalld.service查看selinux：getenforce暂时关闭selinux：setenforce 0永久关闭selinux：修改/etc/selinux/config文件SELINUX=enforcing改为SELINUX=disabled，重启即可 进入pub文件夹，如果有文件，测试正常 安装PXE并生成pxelinux.0启动文件安装syslinux服务：1yum install -y syslinux 查询文件所在目录：1rpm -ql syslinux | grep "pxelinux.0" 安装TFTP服务安装tftp服务：1yum -y install tftp-server 修改配置文件：打开/etc/xinetd.d/tftp文件，修改disable=no 启动tftp服务：1systemctl start xinetd.service 查看server_args的值找到tftpboot文件夹路径（通常为/var/lib/tftpboot）1systemctl start xinetd.service 拷贝文件在tftpboot文件夹下，新建文件夹pxelinux.cfg，并执行如下命令：1234cp /usr/share/syslinux/pxelinux.0 .cp /var/ftp/pub/isolinux/isolinux.cfg ./pxelinux.cfg/defaultcp /var/ftp/pbu/isolinux/vmlinuz .cp /var/ftp/pbu/isolinux/initrd.img . 设置权限设置./pxelinux.cfg/default的权限为644： 1chmod 644 default 安装DHCP服务安装dhcp服务1yum -y install dhcp 配置/etc/dhcp/dhcpd.conf：123456789101112131415ddns-update-style interim;allow booting;allow booting;next-server 192.168.0.1;filename "pxelinux.0";default-lease-time 1800;max-lease-time 7200;ping-check true;option domain-name-servers 192.168.0.1;subnet 192.168.0.0 netmask 255.255.255.0&#123; range 192.168.0.100 192.168.0.220; option routers 192.168.0.1; option broadcast-address 192.168.0.255;&#125; 启动HDCP：1systemctl start dhcpd.service 安装Kickstart工具安装:1yum -y install system-config-kickstart 运行Kickstart并配置选项启动Kickstart Configurator界面（该软件需要系统安装X window）1system-config-kickstart 配置选项页Basic Configuration： Time Zone设置为Asia/Shanghai 勾选 Use UTC clock 设置Root Password与Confirm Password 勾选Reboot system after installation 配置选项页Installation Method： 在Installation source选框中 点选 FTP 填写FTP Server： 192.168.0.1 填写FTP Directory： pub 配置选项页Boot Loader Options： 点选 Install new boot loader 配置选项页Partition Information 勾选 Clear Master Boot Record 勾选 Remove all existing partitions 勾选 Initialize the disk label 点击Add 自定义分区 创建分区 新增 /boot分区 文件系统类型xfs或者ext4 Fixed size: 200MB 新增 /swap分区(在File System Type中选择) Fixed size: 2048MB 新增 / 分区 点选Fill all unused space on disk 创建完成后点击OK 配置选项页Network COnfiguration：点击Add Network Device, 下拉菜单中选择DHCP, 如果Network Device为空，请填写自己的网卡设备 配置选项页Fireswall Configuration： SELinux下拉选项：Disabled Security level下拉选项：Disable firewall 保存选项到文件完成配置并保存到/var/ftp/ks/ks.cfg 修改启动引导文件文件路径为/var/lib/tftpboot/pxelinux.cfg/default 1234timeout 60 //暂定时间label ks //选项kernel vmlinuzappend ks=ftp://192.168.0.1/ks/ks.cfg initrd=initrd.img 类似如下图： 小结到此，无人值守服务已全部配置完成，分别开启其他3台机器后，可自动进入系统安装。下篇《分布式平台前期规划》。]]></content>
+      <categories>
+        <category>hadoop</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[React Native 开始]]></title>
+    <url>%2Frn%2Frn-start%2F</url>
+    <content type="text"><![CDATA[更新中…]]></content>
+      <categories>
+        <category>rn</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>移动</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hadoop 系统搭建系列]]></title>
+    <url>%2Fhadoop%2Fhadoop-start%2F</url>
+    <content type="text"><![CDATA[前言这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程 目录 服务器批量安装 分布式平台前期规划 XGBoost分布式插件]]></content>
+      <categories>
+        <category>hadoop</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NBatis 开始]]></title>
+    <url>%2Fnbatis%2Fnbatis-start%2F</url>
+    <content type="text"><![CDATA[更新中…]]></content>
+      <categories>
+        <category>nbatis</category>
+      </categories>
+      <tags>
+        <tag>NodeJS</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ReactJS 开始]]></title>
+    <url>%2Freactjs%2Freactjs-start%2F</url>
+    <content type="text"><![CDATA[更新中…]]></content>
+      <categories>
+        <category>reactjs</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>SPA</tag>
+      </tags>
+  </entry>
+</search>
