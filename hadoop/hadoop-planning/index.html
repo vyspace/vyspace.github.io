@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="大数据," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分布式平台前期规划">
+<meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-planning/index.html">
+<meta property="og:site_name" content="Evan Z">
+<meta property="og:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://vyspace.github.io/images/post/hadoop/hdp12.jpg">
+<meta property="og:updated_time" content="2018-03-20T08:13:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分布式平台前期规划">
+<meta name="twitter:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta name="twitter:image" content="https://vyspace.github.io/images/post/hadoop/hdp12.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://vyspace.github.io/hadoop/hadoop-planning/"/>
+
+
+
+
+
+
+  <title>分布式平台前期规划 | Evan Z</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband" id=theHeadBand></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Evan Z</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人技术站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nbatis">
+          <a href="/categories/nbatis/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-database"></i> <br />
+            
+            NBatis
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reactjs">
+          <a href="/categories/reactjs/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file-text"></i> <br />
+            
+            ReactJS
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-koa">
+          <a href="/categories/koa/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tree"></i> <br />
+            
+            KOA应用
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-rn">
+          <a href="/categories/rn/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br />
+            
+            React Native
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-hadoop">
+          <a href="/categories/hadoop/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gears"></i> <br />
+            
+            Hadoop
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/hadoop/hadoop-planning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evan Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evan Z">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">分布式平台前期规划</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T11:08:12+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">hadoop</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hadoop/hadoop-planning/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/hadoop/hadoop-planning/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>完成上一篇文章<a href="/hadoop/hadoop-servers/">《服务器批量安装》</a>的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行<a href="https://baike.baidu.com/item/ssh/10407?fr=aladdin" target="_blank" rel="noopener">SHH服务</a>。硬件环境已经准备完成，这篇文章我们将开始讲述<font color="#c00">Hadoop前期规划</font>的准备工作。<a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin" target="_blank" rel="noopener">Hadoop</a>是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color="#c00">是一个非常重要的工作</font>。</p>
+<a id="more"></a>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="主机名配置"><a href="#主机名配置" class="headerlink" title="主机名配置"></a><font color="#c00">主机名配置</font></h2><p>我将分别修改主机名为node0，node1，node2，node3。方便教程的讲述，也方便ssh中的操作。选择其中一台服务器，<font color="#c00">root用户</font>登陆。</p>
+<h3 id="查看主机名"><a href="#查看主机名" class="headerlink" title="查看主机名"></a>查看主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname</span><br></pre></td></tr></table></figure>
+<h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><ul>
+<li>方法一：修改network文件，将HOSTNAME后面的值改为node0，重启后生效。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：修改当前的主机名，立即生效。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname node0</span><br></pre></td></tr></table></figure>
+<h3 id="配置hosts文件"><a href="#配置hosts文件" class="headerlink" title="配置hosts文件"></a>配置hosts文件</h3><p>修改/etc/hosts文件，<font color="#c00">ip0为你自己机器的ip地址</font></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ip0 node0</span><br><span class="line">ip1 node1</span><br><span class="line">ip2 node2</span><br><span class="line">ip3 node3</span><br></pre></td></tr></table></figure>
+<h3 id="分发hosts文件"><a href="#分发hosts文件" class="headerlink" title="分发hosts文件"></a>分发hosts文件</h3><p>将hosts文件分发到其他3台机器中，以保证所有服务器识别主机名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp /etc/hosts root@node1:/etc/</span><br><span class="line">scp /etc/hosts root@node2:/etc/</span><br><span class="line">scp /etc/hosts root@node3:/etc/</span><br></pre></td></tr></table></figure>
+<h2 id="批量管理工具推荐"><a href="#批量管理工具推荐" class="headerlink" title="批量管理工具推荐"></a><font color="#c00">批量管理工具推荐</font></h2><p>如果你想更快，更省力的完成批量操作，有兴趣的童鞋可以安装<a href="http://www.theether.org/pssh/" target="_blank" rel="noopener">Linux集群批量管理工具parallel-ssh(PSSH)</a>，该工具需要<font color="#c00">Python环境</font>，<a href="http://man.linuxde.net/pssh" target="_blank" rel="noopener">安装及操作点击此处链接</a>，该教程中还是采用普通命令进行讲述。</p>
+<h2 id="配置免密码登录"><a href="#配置免密码登录" class="headerlink" title="配置免密码登录"></a><font color="#c00">配置免密码登录</font></h2><p>之后的服务器命令都需要免密码才能正常操作，这是一个必须而重要的步骤。我以node0批量操作其他服务器为例。此步骤需要在所有服务器中完成一边，以方便任意两台机器可以互相登陆。</p>
+<h3 id="创建本机的公钥与私钥"><a href="#创建本机的公钥与私钥" class="headerlink" title="创建本机的公钥与私钥"></a>创建本机的公钥与私钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line">chmod 0600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<h3 id="分发公钥到其他3台服务器"><a href="#分发公钥到其他3台服务器" class="headerlink" title="分发公钥到其他3台服务器"></a>分发公钥到其他3台服务器</h3><p>我以node1为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/.ssh/id_rsa.pub root@node1:~/</span><br></pre></td></tr></table></figure>
+<h3 id="公钥追加"><a href="#公钥追加" class="headerlink" title="公钥追加"></a>公钥追加</h3><p>进入node1的root账户的home目录下，运行如下命令。完成后，就可以从node0免密码登录到node1了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+<h2 id="安装Java环境"><a href="#安装Java环境" class="headerlink" title="安装Java环境"></a><font color="#c00">安装Java环境</font></h2><p>hadoop整套工具都以Java环境为基础，所以4台机器都需要安装。我们以node0为例。</p>
+<h3 id="查看是否安装"><a href="#查看是否安装" class="headerlink" title="查看是否安装"></a>查看是否安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syum list installed | grep java</span><br></pre></td></tr></table></figure>
+<h3 id="查看yum库中的Java安装包"><a href="#查看yum库中的Java安装包" class="headerlink" title="查看yum库中的Java安装包"></a>查看yum库中的Java安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y list java*</span><br></pre></td></tr></table></figure>
+<h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><p>我们以版本1.8.0为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install java-1.8.0-openjdk*</span><br></pre></td></tr></table></figure>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ol>
+<li>将jdk文件夹移动到opt文件夹下</li>
+<li>在/etc/profile文件中追加如下内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/opt/jdk1.8.0_65</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<h2 id="JSP进程集"><a href="#JSP进程集" class="headerlink" title="JSP进程集"></a><font color="#c00">JSP进程集</font></h2><h3 id="工具集介绍"><a href="#工具集介绍" class="headerlink" title="工具集介绍"></a>工具集介绍</h3><p>在此篇基础工具集的规划中，我们主要安装Hadoop, ZooKeeper, HBase, Spark, Jupiter, Thrift。之后的教程中还会讲到Hive，MySQL等。每种工具都对应着一些Java进程，我们将规划这些进程分别部署到哪个服务器上。（话说，分布式应用，总不能把所有的进程都安装在一台服务器中吧。。。 - -!）</p>
+<font color="#c00">注：如果你对上述工具还不熟悉，请跳转到<a href="/hadoop/hadoop-tutorial/">《Hadoop 基础教程》</a></font>
+
+<h3 id="JSP进程"><a href="#JSP进程" class="headerlink" title="JSP进程"></a>JSP进程</h3><p><a href="https://www.cnblogs.com/wzyxidian/p/5314148.html" target="_blank" rel="noopener">JSP</a>是Java Virtual Machine Process Status Tool的缩写，在<a href="https://baike.baidu.com/item/JVM/2902369?fr=aladdin" target="_blank" rel="noopener">JVM</a>中所有具有访问权限的Java进程的具体状态, 包括进程ID，进程启动的路径及启动参数等等，与Linux上的ps命令类似，只不过jps是用来显示java进程，可以把jps理解为ps的一个子集。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>JPS进程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZooKeeper</td>
+<td>QuorumPeerMain, ZKFailoverController</td>
+</tr>
+<tr>
+<td>HDFS</td>
+<td>NameNode, DataNode, JournalNode</td>
+</tr>
+<tr>
+<td>MapReduce, Spark</td>
+<td>ResourceManager, NodeManager</td>
+</tr>
+<tr>
+<td>HBase</td>
+<td>HMaster,  HRegionServer</td>
+</tr>
+<tr>
+<td>Thrift</td>
+<td>ThriftServer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="系统进程"><a href="#系统进程" class="headerlink" title="系统进程"></a>系统进程</h3><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>系统进程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jupiter</td>
+<td>jupiter-notebook</td>
+</tr>
+</tbody>
+</table>
+<h2 id="进程规划"><a href="#进程规划" class="headerlink" title="进程规划"></a><font color="#c00">进程规划</font></h2><h3 id="规划图"><a href="#规划图" class="headerlink" title="规划图"></a>规划图</h3><p>根据上一篇的教程，我们准备了4台服务器，我们将把上面介绍的进程部署在这4台服务器中，方案如下：<br><img src="/images/post/hadoop/hdp12.jpg" alt="planning"></p>
+<p>图中勾选的位置对应着进程将部署在哪台服务器。</p>
+<h3 id="缩写对照表"><a href="#缩写对照表" class="headerlink" title="缩写对照表"></a>缩写对照表</h3><table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>进程全称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NN</td>
+<td>NameNode</td>
+</tr>
+<tr>
+<td>DN</td>
+<td>DataNode</td>
+</tr>
+<tr>
+<td>ZK</td>
+<td>QuorumPeerMain</td>
+</tr>
+<tr>
+<td>ZKFC</td>
+<td>ZKFailoverController</td>
+</tr>
+<tr>
+<td>JN</td>
+<td>JournalNode</td>
+</tr>
+<tr>
+<td>RM</td>
+<td>ResourceManager</td>
+</tr>
+<tr>
+<td>NM</td>
+<td>NodeManager</td>
+</tr>
+<tr>
+<td>HM</td>
+<td>HMaster</td>
+</tr>
+<tr>
+<td>HR</td>
+<td>HRegionServer</td>
+</tr>
+<tr>
+<td>TS</td>
+<td>ThriftServer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在<a href="/hadoop/hadoop-tutorial/">《Hadoop 基础教程》</a>中了解，此处不在赘述！）规划方案可以相应调整，下篇<a href="/hadoop/hadoop-hdp/">《Hadoop 部署》</a>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Evan Zheng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://vyspace.github.io/hadoop/hadoop-planning/" title="分布式平台前期规划">https://vyspace.github.io/hadoop/hadoop-planning/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/koa/koa-start/" rel="next" title="KOA 开始">
+                <i class="fa fa-chevron-left"></i> KOA 开始
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hadoop/hadoop-tutorial/" rel="prev" title="Hadoop 基础教程">
+                Hadoop 基础教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/profile.jpg"
+                alt="Evan Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Evan Zheng</p>
+              <p class="site-description motion-element" itemprop="description">这是一个以前端技术为主的技术博客，以原创为主，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主机名配置"><span class="nav-number">1.1.</span> <span class="nav-text">主机名配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看主机名"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主机名"><span class="nav-number">1.1.2.</span> <span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置hosts文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">配置hosts文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分发hosts文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">分发hosts文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#批量管理工具推荐"><span class="nav-number">1.2.</span> <span class="nav-text">批量管理工具推荐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置免密码登录"><span class="nav-number">1.3.</span> <span class="nav-text">配置免密码登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建本机的公钥与私钥"><span class="nav-number">1.3.1.</span> <span class="nav-text">创建本机的公钥与私钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分发公钥到其他3台服务器"><span class="nav-number">1.3.2.</span> <span class="nav-text">分发公钥到其他3台服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公钥追加"><span class="nav-number">1.3.3.</span> <span class="nav-text">公钥追加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Java环境"><span class="nav-number">1.4.</span> <span class="nav-text">安装Java环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看是否安装"><span class="nav-number">1.4.1.</span> <span class="nav-text">查看是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看yum库中的Java安装包"><span class="nav-number">1.4.2.</span> <span class="nav-text">查看yum库中的Java安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java"><span class="nav-number">1.4.3.</span> <span class="nav-text">安装Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.4.4.</span> <span class="nav-text">配置环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP进程集"><span class="nav-number">1.5.</span> <span class="nav-text">JSP进程集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工具集介绍"><span class="nav-number">1.5.1.</span> <span class="nav-text">工具集介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP进程"><span class="nav-number">1.5.2.</span> <span class="nav-text">JSP进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统进程"><span class="nav-number">1.5.3.</span> <span class="nav-text">系统进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程规划"><span class="nav-number">1.6.</span> <span class="nav-text">进程规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规划图"><span class="nav-number">1.6.1.</span> <span class="nav-text">规划图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩写对照表"><span class="nav-number">1.6.2.</span> <span class="nav-text">缩写对照表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.7.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-copyright"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">VYSPACE STUDIO</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="/lib/gitmint/default.css">
+        <script src="/lib/gitmint/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'vyspace',
+            repo: 'vyspace.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '2f8c2b7ef753b1a6bdb2c42b400b2e911b5ddf21',
+            
+                client_id: 'a9b17d47ebc093c430bf'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/base.js"></script>
+</body>
+</html>

@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="大数据," />
 
 
 
@@ -85,17 +85,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="前言这一系列的文章主要介绍，Hadoop基础，说明各个工具的作用及用途，相互之间的关系。 目录 HDFS MapReduce Zookeeper 关系架构">
+<meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://vyspace.github.io/nbatis/hello-world/index.html">
+<meta property="og:title" content="Hadoop 基础教程">
+<meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-tutorial/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="前言这一系列的文章主要介绍，Hadoop基础，说明各个工具的作用及用途，相互之间的关系。 目录 HDFS MapReduce Zookeeper 关系架构">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-19T10:13:08.000Z">
+<meta property="og:updated_time" content="2018-03-20T08:13:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Hadoop 基础教程">
+<meta name="twitter:description" content="前言这一系列的文章主要介绍，Hadoop基础，说明各个工具的作用及用途，相互之间的关系。 目录 HDFS MapReduce Zookeeper 关系架构">
 
 
 
@@ -125,14 +126,14 @@
 
 
 
-  <link rel="canonical" href="https://vyspace.github.io/nbatis/hello-world/"/>
+  <link rel="canonical" href="https://vyspace.github.io/hadoop/hadoop-tutorial/"/>
 
 
 
 
 
 
-  <title>Hello World | Evan Z</title>
+  <title>Hadoop 基础教程 | Evan Z</title>
   
 
 
@@ -289,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/nbatis/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/hadoop/hadoop-tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Evan Zheng">
@@ -306,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Hadoop 基础教程</h1>
         
 
         <div class="post-meta">
@@ -318,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T18:13:08+08:00">
-                2018-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T14:58:55+08:00">
+                2018-03-20
               </time>
             
 
@@ -341,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nbatis/" itemprop="url" rel="index">
-                    <span itemprop="name">nbatis</span>
+                  <a href="/categories/hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">hadoop</span>
                   </a>
                 </span>
 
@@ -359,8 +360,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/nbatis/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/nbatis/hello-world/" itemprop="commentsCount"></span>
+                <a href="/hadoop/hadoop-tutorial/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/hadoop/hadoop-tutorial/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -388,16 +389,20 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="Deploy-to-remote-sitesasdfasdfasdfas"><a href="#Deploy-to-remote-sitesasdfasdfasdfas" class="headerlink" title="Deploy to remote sitesasdfasdfasdfas"></a>Deploy to remote sitesasdfasdfasdfas</h3><h5 id="asdfasdfasdfasd"><a href="#asdfasdfasdfasd" class="headerlink" title="asdfasdfasdfasd"></a>asdfasdfasdfasd</h5>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一系列的文章主要介绍，Hadoop基础，说明各个工具的作用及用途，相互之间的关系。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><h4 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a><a href="/hadoop/hadoop-servers/">HDFS</a></h4></li>
+<li><h4 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a><a href="/hadoop/hadoop-planning/">MapReduce</a></h4></li>
+<li><h4 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a><a href="/hadoop/hadoop-servers/">Zookeeper</a></h4></li>
+<li><h4 id="关系架构"><a href="#关系架构" class="headerlink" title="关系架构"></a><a href="/hadoop/hadoop-servers/">关系架构</a></h4></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><h4 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a><a href="/hadoop/hadoop-servers/">Spark</a></h4></li>
+<li><h4 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a><a href="/hadoop/hadoop-servers/">HBase</a></h4></li>
+<li><h4 id="Jupiter"><a href="#Jupiter" class="headerlink" title="Jupiter"></a><a href="/hadoop/hadoop-servers/">Jupiter</a></h4></li>
+</ul>
+
       
     </div>
     
@@ -417,7 +422,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://vyspace.github.io/nbatis/hello-world/" title="Hello World">https://vyspace.github.io/nbatis/hello-world/</a>
+    <a href="https://vyspace.github.io/hadoop/hadoop-tutorial/" title="Hadoop 基础教程">https://vyspace.github.io/hadoop/hadoop-tutorial/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -430,6 +435,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+        </div>
+      
 
       
       
@@ -439,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/untitled/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/hadoop/hadoop-planning/" rel="next" title="分布式平台前期规划">
+                <i class="fa fa-chevron-left"></i> 分布式平台前期规划
               </a>
             
           </div>
@@ -590,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sitesasdfasdfasdfas"><span class="nav-number">1.5.</span> <span class="nav-text">Deploy to remote sitesasdfasdfasdfas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#asdfasdfasdfasd"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">asdfasdfasdfasd</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS"><span class="nav-number">2.0.1.</span> <span class="nav-text">HDFS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MapReduce"><span class="nav-number">2.0.2.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zookeeper"><span class="nav-number">2.0.3.</span> <span class="nav-text">Zookeeper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关系架构"><span class="nav-number">2.0.4.</span> <span class="nav-text">关系架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spark"><span class="nav-number">2.0.5.</span> <span class="nav-text">Spark</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HBase"><span class="nav-number">2.0.6.</span> <span class="nav-text">HBase</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Jupiter"><span class="nav-number">2.0.7.</span> <span class="nav-text">Jupiter</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
