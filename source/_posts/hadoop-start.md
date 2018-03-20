@@ -1,21 +1,21 @@
 ---
-title: Hadoop 开始
+title: Hadoop 系统搭建系列
 categories:
   - hadoop
 tags:
   - 大数据
-date: 2018-03-16 12:30:03
+date: 2017-12-06 10:30:03
 ---
 ## 前言
 
-这篇文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程
+这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程
 
 ## 目录
 
-- ##### [服务器批量安装](/hadoop/hadoop-servers/)
+- #### [服务器批量安装](/hadoop/hadoop-servers/)
 
+- #### [分布式平台前期规划](/hadoop/hadoop-planning/)
 
-- ##### [hadoop服务安装](/hadoop/hadoop-servers/)
+- #### [XGBoost分布式插件](/hadoop/hadoop-servers/)
 
-
-- ##### [XGBoost分布式插件](/hadoop/hadoop-servers/)
+<!--more-->
