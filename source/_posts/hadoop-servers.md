@@ -151,8 +151,9 @@ systemctl start dhcpd.service
 yum -y install system-config-kickstart
 ```
 
-### 运行Kickstart，启动视窗界面
+### 运行Kickstart并配置选项
 
+启动Kickstart Configurator界面<font color=#c00>（该软件需要系统安装X window）</font>
 ``` bash
 system-config-kickstart
 ```
@@ -168,13 +169,13 @@ system-config-kickstart
 ### 配置选项页Installation Method：
 
 1. 在Installation source选框中 点选 FTP
-2. 填写FTP Server <font color=#999>192.168.0.1</font>
-3. 填写FTP Directory <font color=#999>pub</font>
+2. 填写FTP Server： <font color=#999>192.168.0.1</font>
+3. 填写FTP Directory： <font color=#999>pub</font>
 ![Basic Configuration](/images/post/hadoop/hdp2.png)
 
 ### 配置选项页Boot Loader Options：
 
-1. 勾选 Install new boot loader
+1. 点选 Install new boot loader
 ![Basic Configuration](/images/post/hadoop/hdp3.png)
 
 ### 配置选项页Partition Information
@@ -182,32 +183,38 @@ system-config-kickstart
 1. 勾选 Clear Master Boot Record
 2. 勾选 Remove all existing partitions
 3. 勾选 Initialize the disk label
-4. 点击add 自定义分区
+4. 点击Add 自定义分区
+![part](/images/post/hadoop/hdp4.png)
 
 ### 创建分区
 
-1. 新增 /boot分区 200MB  文件系统类型xfs或者ext4
-![boot](/images/post/hadoop/hdp4.png)
-2. 新增 /swap分区 2048MB
-![swap](/images/post/hadoop/hdp5.png)
-3. 新增 / 分区 Fill all unused space on disk
-![other](/images/post/hadoop/hdp6.png)
+1. 新增 /boot分区 文件系统类型xfs或者ext4 Fixed size: 200MB  
+![boot](/images/post/hadoop/hdp5.png)
+2. 新增 /swap分区(在File System Type中选择) Fixed size: 2048MB
+![swap](/images/post/hadoop/hdp6.png)
+3. 新增 / 分区 点选Fill all unused space on disk
+  ![other](/images/post/hadoop/hdp7.png)
+4. 创建完成后点击OK
 
 ### 配置选项页Network COnfiguration：
 
-勾选DHCP
+点击Add Network Device, 下拉菜单中选择DHCP, 如果Network Device为空，请填写自己的网卡设备
+![dhcp](/images/post/hadoop/hdp8.png)
 
 ### 配置选项页Fireswall Configuration：
 
-1. 选择SELinux：<font color=#999>Disabled</font>
-2. Security level：<font color=#999>Disable firewall</font>
-![selinux](/images/post/hadoop/hdp7.png)
+1. SELinux下拉选项：<font color=#999>Disabled</font>
+2. Security level下拉选项：<font color=#999>Disable firewall</font>
+![selinux](/images/post/hadoop/hdp9.png)
+
+### 保存选项到文件
 
 完成配置并保存到/var/ftp/ks/ks.cfg
+![save](/images/post/hadoop/hdp10.png)
 
 ### 修改启动引导文件
 
-文件路径为/var/lib/tftpboot/pxelinux.cfg
+文件路径为/var/lib/tftpboot/pxelinux.cfg/default
 
 ``` bash
 timeout 60 //暂定时间
@@ -216,7 +223,7 @@ kernel vmlinuz
 append ks=ftp://192.168.0.1/ks/ks.cfg initrd=initrd.img
 ```
 类似如下图：
-![pxe](/images/post/hadoop/hdp8.png)
+![cfg](/images/post/hadoop/hdp11.png)
 
 ## <font color=#c00>小结</font>
 
