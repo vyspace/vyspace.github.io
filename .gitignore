@@ -1,5 +1,6 @@
 node_modules/
-*loy_git/
+public/
+.deploy_git/
 #files
 .DS_Store
 .idea/*
