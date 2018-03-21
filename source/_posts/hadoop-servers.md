@@ -229,5 +229,7 @@ append ks=ftp://192.168.0.1/ks/ks.cfg initrd=initrd.img
 
 到此，无人值守服务已全部配置完成，分别开启其他3台机器后，可自动进入系统安装。下篇[《分布式平台前期规划》](/hadoop/hadoop-planning/)。
 
+本系列文章[《目录》](/hadoop/hadoop-start/)
+
 
 

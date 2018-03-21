@@ -16,6 +16,10 @@ date: 2017-12-06 10:30:03
 
 - #### [分布式平台前期规划](/hadoop/hadoop-planning/)
 
-- #### [XGBoost分布式插件](/hadoop/hadoop-servers/)
+- #### [ZooKeeper 部署](/hadoop/hadoop-zkp/)
+
+- #### [Hadoop 部署](/hadoop/hadoop-hdp/)
 
 <!--more-->
+
+- #### [XGBoost分布式插件](/hadoop/hadoop-servers/)

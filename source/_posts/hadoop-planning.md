@@ -138,8 +138,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 | 工具             | JPS进程                              |
 | ---------------- | ------------------------------------ |
-| ZooKeeper        | QuorumPeerMain, ZKFailoverController |
-| HDFS             | NameNode, DataNode, JournalNode      |
+| ZooKeeper        | QuorumPeerMain |
+| HDFS             | NameNode, DataNode, JournalNode, ZKFailoverController      |
 | MapReduce, Spark | ResourceManager, NodeManager         |
 | HBase            | HMaster,  HRegionServer              |
 | Thrift           | ThriftServer                         |
@@ -177,4 +177,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 ## <font color=#c00>小结</font>
 
-此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在[《Hadoop 基础教程》](/hadoop/hadoop-tutorial/)中了解，此处不在赘述！）规划方案可以相应调整，下篇[《Hadoop 部署》](/hadoop/hadoop-hdp/)。
+此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在[《Hadoop 基础教程》](/hadoop/hadoop-tutorial/)中了解，此处不在赘述！）规划方案可以相应调整，下篇[《ZooKeeper 部署》](/hadoop/hadoop-zkp/)。
+
+本系列文章[《目录》](/hadoop/hadoop-start/)
