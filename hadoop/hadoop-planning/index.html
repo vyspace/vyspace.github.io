@@ -94,7 +94,7 @@
 <meta property="og:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://vyspace.github.io/images/post/hadoop/hdp12.jpg">
-<meta property="og:updated_time" content="2018-03-20T08:13:11.000Z">
+<meta property="og:updated_time" content="2018-03-21T10:08:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式平台前期规划">
 <meta name="twitter:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
@@ -482,11 +482,11 @@
 <tbody>
 <tr>
 <td>ZooKeeper</td>
-<td>QuorumPeerMain, ZKFailoverController</td>
+<td>QuorumPeerMain</td>
 </tr>
 <tr>
 <td>HDFS</td>
-<td>NameNode, DataNode, JournalNode</td>
+<td>NameNode, DataNode, JournalNode, ZKFailoverController</td>
 </tr>
 <tr>
 <td>MapReduce, Spark</td>
@@ -568,7 +568,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在<a href="/hadoop/hadoop-tutorial/">《Hadoop 基础教程》</a>中了解，此处不在赘述！）规划方案可以相应调整，下篇<a href="/hadoop/hadoop-hdp/">《Hadoop 部署》</a>。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在<a href="/hadoop/hadoop-tutorial/">《Hadoop 基础教程》</a>中了解，此处不在赘述！）规划方案可以相应调整，下篇<a href="/hadoop/hadoop-zkp/">《ZooKeeper 部署》</a>。</p>
+<p>本系列文章<a href="/hadoop/hadoop-start/">《目录》</a></p>
 
       
     </div>
@@ -627,8 +628,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/hadoop/hadoop-tutorial/" rel="prev" title="Hadoop 基础教程">
-                Hadoop 基础教程 <i class="fa fa-chevron-right"></i>
+              <a href="/hadoop/hadoop-zkp/" rel="prev" title="ZooKeeper 部署">
+                ZooKeeper 部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +718,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

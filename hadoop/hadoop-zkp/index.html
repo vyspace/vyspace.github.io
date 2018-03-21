@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="EvanZ,个人技术站,NBatis,KOA应用,大数据,Hadoop,Spark,前端,ReactJS,ReactNative,全栈,分布式计算" />
+  <meta name="keywords" content="大数据," />
 
 
 
@@ -85,16 +85,18 @@
 
 
 
-<meta name="description" content="这是一个以前端技术为主的技术博客，以原创为主，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Evan Z">
-<meta property="og:url" content="https://vyspace.github.io/archives/2018/03/index.html">
+<meta name="description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
+<meta name="keywords" content="大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZooKeeper 部署">
+<meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-zkp/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="这是一个以前端技术为主的技术博客，以原创为主，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...">
+<meta property="og:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-21T10:08:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evan Z">
-<meta name="twitter:description" content="这是一个以前端技术为主的技术博客，以原创为主，其中包括Nbatis持久层插件应用，ReactJS应用教程，KOA全栈架构应用，Hadoop大数据分布式架构，React Native手机应用开发，文章不定时更新中...">
+<meta name="twitter:title" content="ZooKeeper 部署">
+<meta name="twitter:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
 
 
 
@@ -124,14 +126,14 @@
 
 
 
-  <link rel="canonical" href="https://vyspace.github.io/archives/2018/03/"/>
+  <link rel="canonical" href="https://vyspace.github.io/hadoop/hadoop-zkp/"/>
 
 
 
 
 
 
-  <title>归档 | Evan Z</title>
+  <title>ZooKeeper 部署 | Evan Z</title>
   
 
 
@@ -160,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband" id=theHeadBand></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,259 +320,244 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/hadoop/hadoop-zkp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evan Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evan Z">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">ZooKeeper 部署</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T18:01:58+08:00">
+                2018-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 10 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">hadoop</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hadoop/hadoop-zkp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/hadoop/hadoop-zkp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hadoop/hadoop-tutorial/" itemprop="url">
-              
-                <span itemprop="name">Hadoop 基础教程</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-20T14:58:55+08:00"
-              content="2018-03-20" >
-          03-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hadoop/hadoop-hfs/" itemprop="url">
-              
-                <span itemprop="name">Hadoop 部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-20T10:18:18+08:00"
-              content="2018-03-20" >
-          03-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hadoop/hadoop-zkp/" itemprop="url">
-              
-                <span itemprop="name">ZooKeeper 部署</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-19T18:01:58+08:00"
-              content="2018-03-19" >
-          03-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hadoop/hadoop-planning/" itemprop="url">
-              
-                <span itemprop="name">分布式平台前期规划</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-17T11:08:12+08:00"
-              content="2018-03-17" >
-          03-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p><a href="https://baike.baidu.com/item/zookeeper/4836397?fr=aladdin" target="_blank" rel="noopener">ZooKeeper</a>是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。</p>
+<p>安装前，我们需要先准备好安装包，点击<a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">官方下载地址</a>，本文所使用的版本是3.4.10</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a><font color="#c00">创建目录</font></h2><ol>
+<li>在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。</li>
+<li>再创建一个名为zk_data文件夹，作为其数据存储目录。</li>
+</ol>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a><font color="#c00">配置</font></h2><ol>
+<li><p>拷贝conf/zoo_sample.cfg文件，并重命名zoo.cfg <font color="#c00">（这里必须命名为zoo.cfg）</font></p>
+</li>
+<li><p>修改zoo.cfg文件，内容如下：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">dataDir=/opt/zookeeper-3.4.10/zk_data</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=node0的IP:2888:3888</span><br><span class="line">server.2=node2的IP:2888:3888</span><br><span class="line">server.3=node3的IP:2888:3888</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将此配置分别配置到 node0， node2， node3中</p>
+</li>
+<li><p>按照规划ZooKeeper会被部署在node0，node2，node3上，所以需要在这三台服务器中都拷贝一份。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/zookeeper-3.4.10 root@node2:/opt</span><br><span class="line">scp -r /opt/zookeeper-3.4.10 root@node3:/opt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分别在这三个节点的dataDir指向的目录下创建myid文件，值分别为1，2，3</p>
+</li>
+<li><p>在node0，node2，node3中依次启动服务，命令如下：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/zkServer.sh start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看服务是否已经启动</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkserver.sh status</span><br></pre></td></tr></table></figure>
+<p> 如果遇到Error contacting service. It is probably not running 此错误，请查看对应版本的官方文档重新配置zoo.cfg。<br> 如果是java.net.BindException: Address already in use 通过netstat -nltp | grep 2181检查是否该端口已被占用。<br> 如果，遇到防火墙原因，请继续往下看。</p>
+</li>
+</ol>
+<h2 id="关闭防火墙​"><a href="#关闭防火墙​" class="headerlink" title="关闭防火墙​"></a><font color="#c00">关闭防火墙​</font></h2><p>关闭所有服务器的防火墙<font color="#c00">（重点）</font></p>
+<ul>
+<li><p>firewall</p>
+<p>  查看防火墙状态</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<p>  关闭防火墙</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+<p>  禁止开机启动</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭iptables</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables stop</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><font color="#c00">官方文档</font></h2><p>如果需要了解更详细的内容，请访问<a href="http://zookeeper.apache.org/doc/r3.4.10/" target="_blank" rel="noopener">官方文档</a>，文档版本3.4.10</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始<a href="/hadoop/hadoop-hfs/">《部署 HDFS》</a></p>
+<p>本系列文章<a href="/hadoop/hadoop-start/">《目录》</a></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/koa/koa-start/" itemprop="url">
-              
-                <span itemprop="name">KOA 开始</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-16T13:56:17+08:00"
-              content="2018-03-16" >
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hadoop/hadoop-servers/" itemprop="url">
-              
-                <span itemprop="name">服务器批量安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-16T13:11:05+08:00"
-              content="2018-03-16" >
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Evan Zheng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://vyspace.github.io/hadoop/hadoop-zkp/" title="ZooKeeper 部署">https://vyspace.github.io/hadoop/hadoop-zkp/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hadoop/hadoop-planning/" rel="next" title="分布式平台前期规划">
+                <i class="fa fa-chevron-left"></i> 分布式平台前期规划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hadoop/hadoop-hfs/" rel="prev" title="Hadoop 部署">
+                Hadoop 部署 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -578,6 +565,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+  
+
+
 
         </div>
         
@@ -598,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -679,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建目录"><span class="nav-number">1.1.</span> <span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭防火墙​"><span class="nav-number">1.3.</span> <span class="nav-text">关闭防火墙​</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方文档"><span class="nav-number">1.4.</span> <span class="nav-text">官方文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -812,6 +835,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -863,6 +890,34 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'vyspace',
+            repo: 'vyspace.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '2f8c2b7ef753b1a6bdb2c42b400b2e911b5ddf21',
+            
+                client_id: 'a9b17d47ebc093c430bf'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
     
 
 
