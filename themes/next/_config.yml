@@ -35,7 +35,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "EvanZ,个人技术站,NBatis,KOA应用,大数据,Hadoop,Spark,前端,ReactJS,ReactNative,全栈,分布式计算"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -79,7 +79,7 @@ seo: false
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 
 # ---------------------------------------------------------------
@@ -130,9 +130,10 @@ scheme: Muse
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
+social:
   #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  联系我们: mailto:vyspace@yeah.net || envelope
+  NPM: https://www.npmjs.com/package/nbatis || git-square
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -434,7 +435,7 @@ gitment:
 #add_this_id:
 
 # Share
-#duoshuo_share: true
+#duoshuo_share: false
 
 # NeedMoreShare2
 # This plugin is a pure javascript sharing lib which is useful in China.
@@ -448,21 +449,21 @@ gitment:
 #           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
     enable: false
     options:
-      iconStyle: box
+      iconStyle: default
       boxForm: horizontal
       position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,GooglePlus
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
       position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook,GooglePlus
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
