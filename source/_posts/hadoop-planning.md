@@ -8,13 +8,13 @@ date: 2018-03-17 11:08:12
 ---
 完成上一篇文章[《服务器批量安装》](/hadoop/hadoop-servers/)的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行[SHH服务](https://baike.baidu.com/item/ssh/10407?fr=aladdin)。硬件环境已经准备完成，这篇文章我们将开始讲述<font color=#c00>Hadoop前期规划</font>的准备工作。[Hadoop](https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin)是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color=#c00>是一个非常重要的工作</font>。
 
-<!--more-->
-
 # Quick Start
 
 ## <font color=#c00>主机名配置</font>
 
 我将分别修改主机名为node0，node1，node2，node3。方便教程的讲述，也方便ssh中的操作。选择其中一台服务器，<font color=#c00>root用户</font>登陆。
+
+<!--more-->
 
 ### 查看主机名
 

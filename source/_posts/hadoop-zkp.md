@@ -17,6 +17,8 @@ date: 2018-03-19 18:01:58
 1. 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。
 2. 再创建一个名为zk_data文件夹，作为其数据存储目录。
 
+<!--more-->
+
 ## <font color=#c00>配置</font>
 
 1. 拷贝conf/zoo_sample.cfg文件，并重命名zoo.cfg <font color=#c00>（这里必须命名为zoo.cfg）</font>
@@ -91,7 +93,7 @@ date: 2018-03-19 18:01:58
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始[《部署 HDFS》](/hadoop/hadoop-hfs/)
+完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始[《部署 HDFS》](/hadoop/hadoop-dfs/)
 
 本系列文章[《目录》](/hadoop/hadoop-start/)
 
