@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
+<meta name="description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZooKeeper 部署">
 <meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-zkp/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
+<meta property="og:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-21T10:08:39.000Z">
+<meta property="og:updated_time" content="2018-03-22T04:09:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZooKeeper 部署">
-<meta name="twitter:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。  配置 拷贝conf/zoo_s">
+<meta name="twitter:description" content="ZooKeeper是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。 安装前，我们需要先准备好安装包，点击官方下载地址，本文所使用的版本是3.4.10 Quick Start创建目录 在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。 再创建一个名为zk_data文件夹，作为其数据存储目录。">
 
 
 
@@ -439,6 +439,7 @@
 <li>在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。</li>
 <li>再创建一个名为zk_data文件夹，作为其数据存储目录。</li>
 </ol>
+<a id="more"></a>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a><font color="#c00">配置</font></h2><ol>
 <li><p>拷贝conf/zoo_sample.cfg文件，并重命名zoo.cfg <font color="#c00">（这里必须命名为zoo.cfg）</font></p>
 </li>
@@ -475,7 +476,7 @@
 </li>
 </ul>
 <h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><font color="#c00">官方文档</font></h2><p>如果需要了解更详细的内容，请访问<a href="http://zookeeper.apache.org/doc/r3.4.10/" target="_blank" rel="noopener">官方文档</a>，文档版本3.4.10</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始<a href="/hadoop/hadoop-hfs/">《部署 HDFS》</a></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始<a href="/hadoop/hadoop-dfs/">《部署 HDFS》</a></p>
 <p>本系列文章<a href="/hadoop/hadoop-start/">《目录》</a></p>
 
       
@@ -535,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/hadoop/hadoop-hfs/" rel="prev" title="Hadoop 部署">
-                Hadoop 部署 <i class="fa fa-chevron-right"></i>
+              <a href="/hadoop/hadoop-dfs/" rel="prev" title="HDFS 部署">
+                HDFS 部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

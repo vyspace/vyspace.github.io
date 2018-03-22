@@ -85,19 +85,19 @@
 
 
 
-<meta name="description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta name="description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。 Quick Start主机名配置我将分别修改主机名为node0，node1，node2，node3。">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分布式平台前期规划">
 <meta property="og:url" content="https://vyspace.github.io/hadoop/hadoop-planning/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta property="og:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。 Quick Start主机名配置我将分别修改主机名为node0，node1，node2，node3。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://vyspace.github.io/images/post/hadoop/hdp12.jpg">
-<meta property="og:updated_time" content="2018-03-21T10:08:39.000Z">
+<meta property="og:updated_time" content="2018-03-22T04:09:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分布式平台前期规划">
-<meta name="twitter:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。">
+<meta name="twitter:description" content="完成上一篇文章《服务器批量安装》的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行SHH服务。硬件环境已经准备完成，这篇文章我们将开始讲述Hadoop前期规划的准备工作。Hadoop是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，是一个非常重要的工作。 Quick Start主机名配置我将分别修改主机名为node0，node1，node2，node3。">
 <meta name="twitter:image" content="https://vyspace.github.io/images/post/hadoop/hdp12.jpg">
 
 
@@ -436,8 +436,8 @@
 
       
         <p>完成上一篇文章<a href="/hadoop/hadoop-servers/">《服务器批量安装》</a>的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行<a href="https://baike.baidu.com/item/ssh/10407?fr=aladdin" target="_blank" rel="noopener">SHH服务</a>。硬件环境已经准备完成，这篇文章我们将开始讲述<font color="#c00">Hadoop前期规划</font>的准备工作。<a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin" target="_blank" rel="noopener">Hadoop</a>是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color="#c00">是一个非常重要的工作</font>。</p>
-<a id="more"></a>
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="主机名配置"><a href="#主机名配置" class="headerlink" title="主机名配置"></a><font color="#c00">主机名配置</font></h2><p>我将分别修改主机名为node0，node1，node2，node3。方便教程的讲述，也方便ssh中的操作。选择其中一台服务器，<font color="#c00">root用户</font>登陆。</p>
+<a id="more"></a>
 <h3 id="查看主机名"><a href="#查看主机名" class="headerlink" title="查看主机名"></a>查看主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname</span><br></pre></td></tr></table></figure>
 <h3 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h3><ul>
 <li>方法一：修改network文件，将HOSTNAME后面的值改为node0，重启后生效。</li>

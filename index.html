@@ -485,7 +485,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/hadoop/hadoop-hfs/">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/hadoop/hadoop-dfs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Evan Zheng">
@@ -504,7 +504,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/hadoop/hadoop-hfs/" itemprop="url">Hadoop 部署</a></h1>
+                <a class="post-title-link" href="/hadoop/hadoop-dfs/" itemprop="url">HDFS 部署</a></h1>
         
 
         <div class="post-meta">
@@ -582,7 +582,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME=/opt/jdk1.8.0_65</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/hadoop/hadoop-hfs/#more" rel="contents">
+            <a class="btn" href="/hadoop/hadoop-dfs/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -725,53 +725,19 @@
 
       
         
-          
-            <p><a href="https://baike.baidu.com/item/zookeeper/4836397?fr=aladdin" target="_blank" rel="noopener">ZooKeeper</a>是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。</p>
+          <p><a href="https://baike.baidu.com/item/zookeeper/4836397?fr=aladdin" target="_blank" rel="noopener">ZooKeeper</a>是分布式应用程序协调服务，在分布式系统中必不可少。它是为分布式应用提供一致性服务的软件，所以我们首先来安装配置它。</p>
 <p>安装前，我们需要先准备好安装包，点击<a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">官方下载地址</a>，本文所使用的版本是3.4.10</p>
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a><font color="#c00">创建目录</font></h2><ol>
 <li>在解压后的文件夹中创建一个名为tmp文件夹，作为其工作目录。</li>
 <li>再创建一个名为zk_data文件夹，作为其数据存储目录。</li>
 </ol>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a><font color="#c00">配置</font></h2><ol>
-<li><p>拷贝conf/zoo_sample.cfg文件，并重命名zoo.cfg <font color="#c00">（这里必须命名为zoo.cfg）</font></p>
-</li>
-<li><p>修改zoo.cfg文件，内容如下：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tickTime=2000</span><br><span class="line">dataDir=/opt/zookeeper-3.4.10/zk_data</span><br><span class="line">clientPort=2181</span><br><span class="line">initLimit=5</span><br><span class="line">syncLimit=2</span><br><span class="line">server.1=node0的IP:2888:3888</span><br><span class="line">server.2=node2的IP:2888:3888</span><br><span class="line">server.3=node3的IP:2888:3888</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将此配置分别配置到 node0， node2， node3中</p>
-</li>
-<li><p>按照规划ZooKeeper会被部署在node0，node2，node3上，所以需要在这三台服务器中都拷贝一份。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/zookeeper-3.4.10 root@node2:/opt</span><br><span class="line">scp -r /opt/zookeeper-3.4.10 root@node3:/opt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>分别在这三个节点的dataDir指向的目录下创建myid文件，值分别为1，2，3</p>
-</li>
-<li><p>在node0，node2，node3中依次启动服务，命令如下：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/zkServer.sh start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看服务是否已经启动</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zkserver.sh status</span><br></pre></td></tr></table></figure>
-<p> 如果遇到Error contacting service. It is probably not running 此错误，请查看对应版本的官方文档重新配置zoo.cfg。<br> 如果是java.net.BindException: Address already in use 通过netstat -nltp | grep 2181检查是否该端口已被占用。<br> 如果，遇到防火墙原因，请继续往下看。</p>
-</li>
-</ol>
-<h2 id="关闭防火墙​"><a href="#关闭防火墙​" class="headerlink" title="关闭防火墙​"></a><font color="#c00">关闭防火墙​</font></h2><p>关闭所有服务器的防火墙<font color="#c00">（重点）</font></p>
-<ul>
-<li><p>firewall</p>
-<p>  查看防火墙状态</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-<p>  关闭防火墙</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
-<p>  禁止开机启动</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭iptables</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables stop</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><font color="#c00">官方文档</font></h2><p>如果需要了解更详细的内容，请访问<a href="http://zookeeper.apache.org/doc/r3.4.10/" target="_blank" rel="noopener">官方文档</a>，文档版本3.4.10</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始<a href="/hadoop/hadoop-hfs/">《部署 HDFS》</a></p>
-<p>本系列文章<a href="/hadoop/hadoop-start/">《目录》</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hadoop/hadoop-zkp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -911,6 +877,7 @@
       
         
           <p>完成上一篇文章<a href="/hadoop/hadoop-servers/">《服务器批量安装》</a>的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行<a href="https://baike.baidu.com/item/ssh/10407?fr=aladdin" target="_blank" rel="noopener">SHH服务</a>。硬件环境已经准备完成，这篇文章我们将开始讲述<font color="#c00">Hadoop前期规划</font>的准备工作。<a href="https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin" target="_blank" rel="noopener">Hadoop</a>是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color="#c00">是一个非常重要的工作</font>。</p>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="主机名配置"><a href="#主机名配置" class="headerlink" title="主机名配置"></a><font color="#c00">主机名配置</font></h2><p>我将分别修改主机名为node0，node1，node2，node3。方便教程的讲述，也方便ssh中的操作。选择其中一台服务器，<font color="#c00">root用户</font>登陆。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/hadoop/hadoop-planning/#more" rel="contents">
@@ -1487,12 +1454,11 @@
 
       
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件到开发及使用的教程</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件的开发及使用的教程</p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><h4 id="服务器批量安装"><a href="#服务器批量安装" class="headerlink" title="服务器批量安装"></a><a href="/hadoop/hadoop-servers/">服务器批量安装</a></h4></li>
 <li><h4 id="分布式平台前期规划"><a href="#分布式平台前期规划" class="headerlink" title="分布式平台前期规划"></a><a href="/hadoop/hadoop-planning/">分布式平台前期规划</a></h4></li>
 <li><h4 id="ZooKeeper-部署"><a href="#ZooKeeper-部署" class="headerlink" title="ZooKeeper 部署"></a><a href="/hadoop/hadoop-zkp/">ZooKeeper 部署</a></h4></li>
-<li><h4 id="Hadoop-部署"><a href="#Hadoop-部署" class="headerlink" title="Hadoop 部署"></a><a href="/hadoop/hadoop-hdp/">Hadoop 部署</a></h4></li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
