@@ -1,7 +1,7 @@
 ---
 title: ZooKeeper 部署
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2018-03-19 18:01:58
@@ -93,7 +93,7 @@ date: 2018-03-19 18:01:58
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始[《部署 HDFS》](/hadoop/hadoop-dfs/)
+完成上述配置后，ZooKeeper应该可以正常启动了，下篇文件我们开始[《部署 HDFS》](/ai/hadoop-dfs/)
 
-本系列文章[《目录》](/hadoop/hadoop-start/)
+本系列文章[《目录》](/ai/hadoop-start/)
 

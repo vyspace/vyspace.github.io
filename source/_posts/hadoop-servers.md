@@ -1,7 +1,7 @@
 ---
 title: 服务器批量安装
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2018-03-16 13:11:05
@@ -164,19 +164,19 @@ system-config-kickstart
 2. 勾选 Use UTC clock
 3. 设置Root Password与Confirm Password
 4. 勾选Reboot system after installation
-![Basic Configuration](/images/post/hadoop/hdp1.png)
+![Basic Configuration](/images/post/ai/hdp1.png)
 
 ### 配置选项页Installation Method：
 
 1. 在Installation source选框中 点选 FTP
 2. 填写FTP Server： <font color=#999>192.168.0.1</font>
 3. 填写FTP Directory： <font color=#999>pub</font>
-![Basic Configuration](/images/post/hadoop/hdp2.png)
+![Basic Configuration](/images/post/ai/hdp2.png)
 
 ### 配置选项页Boot Loader Options：
 
 1. 点选 Install new boot loader
-![Basic Configuration](/images/post/hadoop/hdp3.png)
+![Basic Configuration](/images/post/ai/hdp3.png)
 
 ### 配置选项页Partition Information
 
@@ -184,33 +184,33 @@ system-config-kickstart
 2. 勾选 Remove all existing partitions
 3. 勾选 Initialize the disk label
 4. 点击Add 自定义分区
-![part](/images/post/hadoop/hdp4.png)
+![part](/images/post/ai/hdp4.png)
 
 ### 创建分区
 
 1. 新增 /boot分区 文件系统类型xfs或者ext4 Fixed size: 200MB  
-![boot](/images/post/hadoop/hdp5.png)
+![boot](/images/post/ai/hdp5.png)
 2. 新增 /swap分区(在File System Type中选择) Fixed size: 2048MB
-![swap](/images/post/hadoop/hdp6.png)
+![swap](/images/post/ai/hdp6.png)
 3. 新增 / 分区 点选Fill all unused space on disk
-  ![other](/images/post/hadoop/hdp7.png)
+  ![other](/images/post/ai/hdp7.png)
 4. 创建完成后点击OK
 
 ### 配置选项页Network COnfiguration：
 
 点击Add Network Device, 下拉菜单中选择DHCP, 如果Network Device为空，请填写自己的网卡设备
-![dhcp](/images/post/hadoop/hdp8.png)
+![dhcp](/images/post/ai/hdp8.png)
 
 ### 配置选项页Fireswall Configuration：
 
 1. SELinux下拉选项：<font color=#999>Disabled</font>
 2. Security level下拉选项：<font color=#999>Disable firewall</font>
-![selinux](/images/post/hadoop/hdp9.png)
+![selinux](/images/post/ai/hdp9.png)
 
 ### 保存选项到文件
 
 完成配置并保存到/var/ftp/ks/ks.cfg
-![save](/images/post/hadoop/hdp10.png)
+![save](/images/post/ai/hdp10.png)
 
 ### 修改启动引导文件
 
@@ -223,13 +223,13 @@ kernel vmlinuz
 append ks=ftp://192.168.0.1/ks/ks.cfg initrd=initrd.img
 ```
 类似如下图：
-![cfg](/images/post/hadoop/hdp11.png)
+![cfg](/images/post/ai/hdp11.png)
 
 ## <font color=#c00>小结</font>
 
-到此，无人值守服务已全部配置完成，分别开启其他3台机器后，可自动进入系统安装。下篇[《分布式平台前期规划》](/hadoop/hadoop-planning/)。
+到此，无人值守服务已全部配置完成，分别开启其他3台机器后，可自动进入系统安装。下篇[《分布式平台前期规划》](/ai/hadoop-planning/)。
 
-本系列文章[《目录》](/hadoop/hadoop-start/)
+本系列文章[《目录》](/ai/hadoop-start/)
 
 
 

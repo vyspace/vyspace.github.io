@@ -1,7 +1,7 @@
 ---
 title: HDFS 部署
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2018-03-20 10:18:18
@@ -22,7 +22,7 @@ JAVA_HOME=/opt/jdk1.8.0_65
 
 <font color=#c00>注：因为Hadoop相关的工具比较多，可以把所有工具统一放在相同文件路径下，即使在不同服务器中也可以方便查找，本文将统一放在/opt路径下</font>
 
-![path](/images/post/hadoop/hdp13.png)
+![path](/images/post/ai/hdp13.png)
 
 ## HDFS配置
 
@@ -276,7 +276,7 @@ sbin/start-dfs.sh
 ### 访问HTTP服务
 
 通过IP地址:50070接口，在浏览器中正常访问到HDFS。
-![hdfsweb](/images/post/hadoop/hdp14.png)
+![hdfsweb](/images/post/ai/hdp14.png)
 
 <font color=#c00>注：node0与node1中，一台是active状态，一台是standby状态，由ZooKeeper服务投票决定。</font>
 
@@ -311,9 +311,9 @@ bin/hdfs haadmin -transitionToActive --forcemanual nn2
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，HDFS可以正常访问了，下篇文件我们开始[《部署 MapReduce》](/hadoop/hadoop-mrd/)
+完成上述配置后，HDFS可以正常访问了，下篇文件我们开始[《部署 MapReduce》](/ai/hadoop-mrd/)
 
-本系列文章[《目录》](/hadoop/hadoop-start/)
+本系列文章[《目录》](/ai/hadoop-start/)
 
 
 

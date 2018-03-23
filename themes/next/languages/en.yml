@@ -16,6 +16,11 @@ menu:
   schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
+  nbatis: NBatis
+  react: React
+  koa: KOA
+  ai: AI
+  other: Other
 
 sidebar:
   overview: Overview

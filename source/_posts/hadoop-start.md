@@ -1,7 +1,7 @@
 ---
 title: Hadoop 系统搭建系列
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2017-12-06 10:30:03
@@ -12,14 +12,14 @@ date: 2017-12-06 10:30:03
 
 ## 目录
 
-- #### [服务器批量安装](/hadoop/hadoop-servers/)
+- #### [服务器批量安装](/ai/hadoop-servers/)
 
-- #### [分布式平台前期规划](/hadoop/hadoop-planning/)
+- #### [分布式平台前期规划](/ai/hadoop-planning/)
 
-- #### [ZooKeeper 部署](/hadoop/hadoop-zkp/)
+- #### [ZooKeeper 部署](/ai/hadoop-zkp/)
 
 <!--more-->
 
-- #### [HDFS 部署](/hadoop/hadoop-dfs/)
+- #### [HDFS 部署](/ai/hadoop-dfs/)
 
-- #### [XGBoost分布式插件](/hadoop/hadoop-xgb/)
+- #### [XGBoost分布式插件](/ai/hadoop-xgb/)

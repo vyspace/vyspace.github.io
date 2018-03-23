@@ -1,7 +1,7 @@
 ---
 title: ReactJS 开始
 categories:
-  - reactjs
+  - react
 tags:
   - 前端
   - SPA

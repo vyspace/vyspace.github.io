@@ -1,7 +1,7 @@
 ---
 title: Hadoop 基础教程
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2018-03-20 14:58:55
@@ -12,20 +12,20 @@ date: 2018-03-20 14:58:55
 
 ## 目录
 
-- #### [HDFS](/hadoop/hadoop-servers/)
+- #### [HDFS](/ai/hadoop-hdfs/)
 
-- #### [MapReduce](/hadoop/hadoop-planning/)
+- #### [MapReduce](/ai/hadoop-mapreduce/)
 
-- #### [Zookeeper](/hadoop/hadoop-servers/)
+- #### [Zookeeper](/ai/hadoop-zookeeper/)
 
-- #### [关系架构](/hadoop/hadoop-servers/)
+- #### [关系架构](/ai/hadoop-relate/)
 
 <!--more-->
 
-- #### [Spark](/hadoop/hadoop-servers/)
+- #### [Spark](/ai/hadoop-spark/)
 
-- #### [HBase](/hadoop/hadoop-servers/)
+- #### [HBase](/ai/hadoop-hbase/)
 
-- #### [Jupiter](/hadoop/hadoop-servers/)
+- #### [Jupiter](/ai/hadoop-jupiter/)
 
 

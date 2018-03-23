@@ -1,12 +1,12 @@
 ---
 title: 分布式平台前期规划
 categories:
-  - hadoop
+  - ai
 tags:
   - 大数据
 date: 2018-03-17 11:08:12
 ---
-完成上一篇文章[《服务器批量安装》](/hadoop/hadoop-servers/)的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行[SHH服务](https://baike.baidu.com/item/ssh/10407?fr=aladdin)。硬件环境已经准备完成，这篇文章我们将开始讲述<font color=#c00>Hadoop前期规划</font>的准备工作。[Hadoop](https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin)是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color=#c00>是一个非常重要的工作</font>。
+完成上一篇文章[《服务器批量安装》](/ai/hadoop-servers/)的内容后，我们已经拥有了4台Linux服务器，且相互之间网络可以互通，并且正常运行[SHH服务](https://baike.baidu.com/item/ssh/10407?fr=aladdin)。硬件环境已经准备完成，这篇文章我们将开始讲述<font color=#c00>Hadoop前期规划</font>的准备工作。[Hadoop](https://baike.baidu.com/item/Hadoop/3526507?fr=aladdin)是一系列工具的集合，如何合理的规划这些工具以及分配服务器资源，<font color=#c00>是一个非常重要的工作</font>。
 
 # Quick Start
 
@@ -130,7 +130,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 在此篇基础工具集的规划中，我们主要安装Hadoop, ZooKeeper, HBase, Spark, Jupiter, Thrift。之后的教程中还会讲到Hive，MySQL等。每种工具都对应着一些Java进程，我们将规划这些进程分别部署到哪个服务器上。（话说，分布式应用，总不能把所有的进程都安装在一台服务器中吧。。。 - -!）
 
-<font color=#c00>注：如果你对上述工具还不熟悉，请跳转到[《Hadoop 基础教程》](/hadoop/hadoop-tutorial/)</font>
+<font color=#c00>注：如果你对上述工具还不熟悉，请跳转到[《Hadoop 基础教程》](/ai/hadoop-tutorial/)</font>
 
 ### JSP进程
 
@@ -155,7 +155,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 ### 规划图
 
 根据上一篇的教程，我们准备了4台服务器，我们将把上面介绍的进程部署在这4台服务器中，方案如下：
-![planning](/images/post/hadoop/hdp12.jpg)
+![planning](/images/post/ai/hdp12.jpg)
 
 图中勾选的位置对应着进程将部署在哪台服务器。
 
@@ -177,6 +177,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 ## <font color=#c00>小结</font>
 
-此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在[《Hadoop 基础教程》](/hadoop/hadoop-tutorial/)中了解，此处不在赘述！）规划方案可以相应调整，下篇[《ZooKeeper 部署》](/hadoop/hadoop-zkp/)。
+此篇主要介绍平台安装前的准备工作，以及要部署的工具集与JSP进程的规划方案，当然这个规划方案是以4台服务器为基础，如果你的服务器数量超过4台（无论怎样要大于等于3台，原因可以在[《Hadoop 基础教程》](/ai/hadoop-tutorial/)中了解，此处不在赘述！）规划方案可以相应调整，下篇[《ZooKeeper 部署》](/ai/hadoop-zkp/)。
 
-本系列文章[《目录》](/hadoop/hadoop-start/)
+本系列文章[《目录》](/ai/hadoop-start/)

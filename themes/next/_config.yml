@@ -94,10 +94,10 @@ index_with_subtitle: true
 menu:
   home: / || home
   nbatis: /categories/nbatis/ || database
-  reactjs: /categories/reactjs/ || file-text
+  react: /categories/react/ || file-text
   koa: /categories/koa/ || tree
-  rn: /categories/rn/ || file
-  hadoop: /categories/hadoop/ || gears
+  ai: /categories/ai/ || gears
+  other: /categories/other/ || book
   about: /about/ || user
   
   #archives: /archives/ || archive

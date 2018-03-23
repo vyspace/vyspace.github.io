@@ -1,7 +1,6 @@
 {% extends '_layout.swig' %}
 {% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
-
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
 
 {% block content %}
