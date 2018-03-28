@@ -12,7 +12,7 @@ date: 2017-04-25 08:36:53
 
 # Quick Start
 
-## <font color=#c00>CPU 信息</font>
+## <font color=#c00>CPU 信息查询命令</font>
 
 ### 基础信息
 
@@ -43,5 +43,4 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 ### 是否开启超线程
 
 - 逻辑CPU  >  物理CPU  x   CPU核数 <font color=#999>（已开启超线程）</font>
-
 - 逻辑CPU  =  物理CPU  x   CPU核数 <font color=#999>（未开启超线程或不支持超线程）</font>
