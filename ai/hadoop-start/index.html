@@ -88,14 +88,14 @@
 <meta name="description" content="前言这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件的开发及使用的教程 目录 服务器批量安装 分布式平台前期规划 ZooKeeper 部署">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop 系统搭建系列">
+<meta property="og:title" content="Hadoop 系统搭建[系列]">
 <meta property="og:url" content="https://vyspace.github.io/ai/hadoop-start/index.html">
 <meta property="og:site_name" content="Evan Z">
 <meta property="og:description" content="前言这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件的开发及使用的教程 目录 服务器批量安装 分布式平台前期规划 ZooKeeper 部署">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T09:23:35.000Z">
+<meta property="og:updated_time" content="2018-03-30T09:52:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop 系统搭建系列">
+<meta name="twitter:title" content="Hadoop 系统搭建[系列]">
 <meta name="twitter:description" content="前言这一系列的文章主要介绍，Hadoop分布式系统如何从硬件到软件搭建完成，相关插件的开发及使用的教程 目录 服务器批量安装 分布式平台前期规划 ZooKeeper 部署">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title>Hadoop 系统搭建系列 | Evan Z</title>
+  <title>Hadoop 系统搭建[系列] | Evan Z</title>
   
 
 
@@ -351,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hadoop 系统搭建系列</h1>
+          <h1 class="post-title" itemprop="name headline">Hadoop 系统搭建[系列]</h1>
         
 
         <div class="post-meta">
@@ -442,6 +442,8 @@
 <a id="more"></a>
 <ul>
 <li><h4 id="HDFS-部署"><a href="#HDFS-部署" class="headerlink" title="HDFS 部署"></a><a href="/ai/hadoop-dfs/">HDFS 部署</a></h4></li>
+<li><h4 id="YARN-部署"><a href="#YARN-部署" class="headerlink" title="YARN 部署"></a><a href="/ai/hadoop-yrn/">YARN 部署</a></h4></li>
+<li><h4 id="Spark-部署"><a href="#Spark-部署" class="headerlink" title="Spark 部署"></a><a href="/ai/hadoop-spk/">Spark 部署</a></h4></li>
 <li><h4 id="XGBoost分布式插件"><a href="#XGBoost分布式插件" class="headerlink" title="XGBoost分布式插件"></a><a href="/ai/hadoop-xgb/">XGBoost分布式插件</a></h4></li>
 </ul>
 
@@ -464,7 +466,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://vyspace.github.io/ai/hadoop-start/" title="Hadoop 系统搭建系列">https://vyspace.github.io/ai/hadoop-start/</a>
+    <a href="https://vyspace.github.io/ai/hadoop-start/" title="Hadoop 系统搭建[系列]">https://vyspace.github.io/ai/hadoop-start/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -492,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/other/other-luxhw/" rel="next" title="Linux 硬件信息查询">
-                <i class="fa fa-chevron-left"></i> Linux 硬件信息查询
+              <a href="/other/linux-monitor/" rel="next" title="Linux 使用监控">
+                <i class="fa fa-chevron-left"></i> Linux 使用监控
               </a>
             
           </div>
@@ -592,7 +594,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -663,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器批量安装"><span class="nav-number">2.0.1.</span> <span class="nav-text">服务器批量安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式平台前期规划"><span class="nav-number">2.0.2.</span> <span class="nav-text">分布式平台前期规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZooKeeper-部署"><span class="nav-number">2.0.3.</span> <span class="nav-text">ZooKeeper 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS-部署"><span class="nav-number">2.0.4.</span> <span class="nav-text">HDFS 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XGBoost分布式插件"><span class="nav-number">2.0.5.</span> <span class="nav-text">XGBoost分布式插件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器批量安装"><span class="nav-number">2.0.1.</span> <span class="nav-text">服务器批量安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式平台前期规划"><span class="nav-number">2.0.2.</span> <span class="nav-text">分布式平台前期规划</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZooKeeper-部署"><span class="nav-number">2.0.3.</span> <span class="nav-text">ZooKeeper 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS-部署"><span class="nav-number">2.0.4.</span> <span class="nav-text">HDFS 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#YARN-部署"><span class="nav-number">2.0.5.</span> <span class="nav-text">YARN 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spark-部署"><span class="nav-number">2.0.6.</span> <span class="nav-text">Spark 部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XGBoost分布式插件"><span class="nav-number">2.0.7.</span> <span class="nav-text">XGBoost分布式插件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
