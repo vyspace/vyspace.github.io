@@ -1,5 +1,5 @@
 ---
-title: Hadoop 基础教程
+title: Hadoop 基础教程[系列]
 categories:
   - ai
 tags:

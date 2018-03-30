@@ -1,5 +1,5 @@
 ---
-title: Hadoop 系统搭建系列
+title: Hadoop 系统搭建[系列]
 categories:
   - ai
 tags:
@@ -21,5 +21,9 @@ date: 2017-12-06 10:30:03
 <!--more-->
 
 - #### [HDFS 部署](/ai/hadoop-dfs/)
+
+- #### [YARN 部署](/ai/hadoop-yrn/)
+
+- #### [Spark 部署](/ai/hadoop-spk/)
 
 - #### [XGBoost分布式插件](/ai/hadoop-xgb/)

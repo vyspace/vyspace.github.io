@@ -35,4 +35,9 @@ CPU个数：双路
 	cache_alignment	: 64
 	address sizes	: 40 bits physical, 48 bits virtual
 	power management:
+内存信息：
+	       total       used        free         shared     buff/cache  available
+Mem:       99003780    52820972    28880564     1696800    17302244    43267624
+Swap:      10485756           0    10485756
+
 

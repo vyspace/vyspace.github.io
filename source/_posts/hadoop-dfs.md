@@ -24,7 +24,7 @@ JAVA_HOME=/opt/jdk1.8.0_65
 
 ![path](/images/post/ai/hdp13.png)
 
-## HDFS配置
+## <font color=#c00>HDFS配置</font>
 
 配置etc/hadoop/hdfs-site.xml，将下面的XML标签项添加在&lt;configuration&gt;标签内。
 
@@ -263,7 +263,7 @@ bin/hdfs namenode -bootstrapStandby
 
 ### 启动HDFS服务
 
-完成以上步骤后，就可以启动HDFS服务了：
+完成以上步骤后，就可以启动HDFS服务了，在4台节点中，任一选择一台键入命令，都可以启动所有节点的服务。这里推荐使用node0。
 
 ``` bash
 sbin/start-dfs.sh
@@ -311,7 +311,7 @@ bin/hdfs haadmin -transitionToActive --forcemanual nn2
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，HDFS可以正常访问了，下篇文件我们开始[《部署 MapReduce》](/ai/hadoop-mrd/)
+完成上述配置后，HDFS可以正常访问了，HDFS很多操作能够正常使用，MapReduce是必不可少的。随着HDFS的配置完成，说明MapReduce也配置完成。下篇文件我们开始[《YARN 部署》](/ai/hadoop-yrn/)
 
 本系列文章[《目录》](/ai/hadoop-start/)
 
