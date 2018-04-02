@@ -26,4 +26,4 @@ date: 2017-12-06 10:30:03
 
 - #### [Spark 部署](/ai/hadoop-spk/)
 
-- #### [XGBoost分布式插件](/ai/hadoop-xgb/)
+- #### [HBase 部署](/ai/hadoop-hbs/)
