@@ -148,7 +148,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 | 工具 | 系统进程 |
 | ---- | -------- |
-| Jupiter     | jupiter-notebook |
+| Jupyter     | jupyter-notebook |
 
 ## <font color=#c00>进程规划</font>
 

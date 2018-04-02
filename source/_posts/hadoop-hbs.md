@@ -181,6 +181,6 @@ scan '表名'
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，HBase可以正常访问了，基础的存储与计算都配置完成。下篇文件我们开始[《Jupyter 部署》](/ai/hadoop-yrn/)
+完成上述配置后，HBase可以正常访问了，基础的存储与计算都配置完成。下篇文件我们开始[《Jupyter 部署》](/ai/hadoop-jpt/)
 
 本系列文章[《目录》](/ai/hadoop-start/)
