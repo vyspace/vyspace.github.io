@@ -85,18 +85,21 @@
 
 
 
-<meta name="description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。 首先选择一个主要">
+<meta name="description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。">
 <meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jupyter 部署">
 <meta property="og:url" content="https://vyspace.github.io/ai/hadoop-jpt/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。 首先选择一个主要">
+<meta property="og:description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-02T09:56:18.000Z">
+<meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp17.png">
+<meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp19.png">
+<meta property="og:updated_time" content="2018-04-03T04:09:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jupyter 部署">
-<meta name="twitter:description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。 首先选择一个主要">
+<meta name="twitter:description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。">
+<meta name="twitter:image" content="https://vyspace.github.io/images/post/ai/hdp17.png">
 
 
 
@@ -435,29 +438,46 @@
       
         <p>Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。</p>
 <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a><font color="#c00">Anaconda</font></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Anaconda是Python的版本管理工具，登陆<a href="https://www.anaconda.com/" target="_blank" rel="noopener">官方网站</a>下载安装包，其安装文件分为Python3.x与Python2.7版本。</p>
+<a id="more"></a>
 <p>首先选择一个主要Python版本，这里选择2.7，所以我们下载Anaconda(py2)，下载可直接运行sh文件进行安装。安装完成后可运行如下指令查看conda的信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info</span><br></pre></td></tr></table></figure>
 <h3 id="切换Python3"><a href="#切换Python3" class="headerlink" title="切换Python3"></a>切换Python3</h3><p>运行如下命令，安装Python3</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py3 python=3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py3 python=3</span><br></pre></td></tr></table></figure>
 <h3 id="版本切换"><a href="#版本切换" class="headerlink" title="版本切换"></a>版本切换</h3><p>回到py2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate py3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> deactivate py3</span><br></pre></td></tr></table></figure>
 <p>进入py3</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate py3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate py3</span><br></pre></td></tr></table></figure>
 <p>除了Anaconda，你也可以安装它的mini版，Miniconda。</p>
 <p>Anaconda包内已经包含了Jupyter，在装完anaconda应该会自动安装了Jupyter，下面就可以直接启动Jupyter服务了。</p>
 <h2 id="Jupyter"><a href="#Jupyter" class="headerlink" title="Jupyter"></a><font color="#c00">Jupyter</font></h2><font color="#c00">注：启动Jupyter服务建议不要使用root账户，原因后面会说到，所以我们切换到其他账户，这里我切换到test账户：</font>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su test</span><br></pre></td></tr></table></figure>
-<h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
 <p>生成后的文件会在~/.jupyter中</p>
 <h3 id="自动生成密钥"><a href="#自动生成密钥" class="headerlink" title="自动生成密钥"></a>自动生成密钥</h3><p>因为服务开放后，所有人都可以访问，所以需要配置密码（此步也是必须的）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br></pre></td></tr></table></figure>
 <p>运行此命令后，可输入两次密码，完成后会在~/.jupyter/upyter_notebook_config.json文件中生成一串token。</p>
 <h3 id="配置HTTP服务"><a href="#配置HTTP服务" class="headerlink" title="配置HTTP服务"></a>配置HTTP服务</h3><p>打开~/.jupyter/jupyter_notebook_config.py文件，修改如下配置项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 容许所有IP可访问</span><br><span class="line">c.NotebookApp.ip = &apos;*&apos;</span><br><span class="line"></span><br><span class="line"># 初始化notebook工作区根目录，我在test帐户下，新建jupyter_notebook文件夹作为根目录</span><br><span class="line">c.NotebookApp.notebook_dir = u&apos;/home/test/jupyter_notebook&apos;</span><br><span class="line"></span><br><span class="line">＃ 是否打开浏览器立即启动</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line"></span><br><span class="line">＃ 之前生成的token</span><br><span class="line">c.NotebookApp.password ＝ u&apos;sha1:xxx&apos;</span><br><span class="line"></span><br><span class="line">＃ 端口配置</span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
-<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --config=~/.jupyter/jupyter_notebook_config.py</span><br></pre></td></tr></table></figure>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a><font color="#c00">测试</font></h2><p>启动完成后，浏览器访问8888端口，就可以正常打开Jupyter了，</p>
-<p>未完待续…</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容许所有IP可访问</span></span><br><span class="line">c.NotebookApp.ip = <span class="string">'*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化notebook工作区根目录，我在test帐户下，新建jupyter_notebook文件夹作为根目录</span></span><br><span class="line">c.NotebookApp.notebook_dir = u<span class="string">'/home/test/jupyter_notebook'</span></span><br><span class="line"></span><br><span class="line">＃ 是否打开浏览器立即启动</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line"></span><br><span class="line">＃ 之前生成的token</span><br><span class="line">c.NotebookApp.password ＝ u<span class="string">'sha1:xxx'</span></span><br><span class="line"></span><br><span class="line">＃ 端口配置</span><br><span class="line">c.NotebookApp.port = 8888</span><br></pre></td></tr></table></figure>
+<h3 id="运行服务"><a href="#运行服务" class="headerlink" title="运行服务"></a>运行服务</h3><p>新建.jupyter_out文件夹，将所有log日志记录在jupyter.log文件中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook &gt;/home/<span class="built_in">test</span>/.jupyter_out/jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<font color="#c00">注：jupyter服务不是jps服务，所以需要使用ps命令查看</font>
+
+<h2 id="HTTP访问"><a href="#HTTP访问" class="headerlink" title="HTTP访问"></a><font color="#c00">HTTP访问</font></h2><p>启动完成后，浏览器访问8888端口，就可以正常打开Jupyter了，</p>
+<font color="#c00">注：第一次登陆需要填写密码</font>
+
+<p><img src="/images/post/ai/hdp17.png" alt="jupyter"></p>
+<font color="#c00">注：之前有提到启动Jupyter服务，我建议切换到非root账户，原因是在Jupyter Notebook中用户可以新建命令行终端，你用什么账户启动服务，这里新建的终端将会以什么账户登录。所以为了控制用户权限及系统安全的考虑，不建议使用root账户去启动服务。</font>
+
+<p><img src="/images/post/ai/hdp19.png" alt="noroot"></p>
+<h2 id="Spark集群配置"><a href="#Spark集群配置" class="headerlink" title="Spark集群配置"></a><font color="#c00">Spark集群配置</font></h2><p>为了让我们的jupyter可以访问Sprak集群去计算任务，我们还需要配置PySpark，<a href="http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/" target="_blank" rel="noopener">请点击此处查看</a>具体配置教程</p>
+<p>因为配置过后时间隔的太久，记得不是很清楚了，可以试试如下命令，启动集群</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --profile=pyspark &gt;/home/<span class="built_in">test</span>/.jupyter_out/jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<p>如果使用root账户启动，命令中加 –allow-root</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --profile=pyspark --allow-root &gt;/home/<span class="built_in">test</span>/.jupyter_out/jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+<p>到这里Jupyter服务已部署完毕。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，我们的IDE也部署完成了，不过还有一些小缺陷，就是Jupyter无法访问HBase。下篇文件我们开始<a href="/ai/hadoop-thr/">《Thrift 部署》</a></p>
+<p>本系列文章<a href="/ai/hadoop-start/">《目录》</a></p>
 
       
     </div>
@@ -515,6 +535,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ai/hadoop-thr/" rel="prev" title="Thrift 部署">
+                Thrift 部署 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -602,7 +626,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换Python3"><span class="nav-number">1.1.2.</span> <span class="nav-text">切换Python3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本切换"><span class="nav-number">1.1.3.</span> <span class="nav-text">版本切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter"><span class="nav-number">1.2.</span> <span class="nav-text">Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成配置文件"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动生成密钥"><span class="nav-number">1.2.2.</span> <span class="nav-text">自动生成密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置HTTP服务"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置HTTP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行服务"><span class="nav-number">1.2.4.</span> <span class="nav-text">运行服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">1.3.</span> <span class="nav-text">测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换Python3"><span class="nav-number">1.1.2.</span> <span class="nav-text">切换Python3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本切换"><span class="nav-number">1.1.3.</span> <span class="nav-text">版本切换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter"><span class="nav-number">1.2.</span> <span class="nav-text">Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成配置文件"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动生成密钥"><span class="nav-number">1.2.2.</span> <span class="nav-text">自动生成密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置HTTP服务"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置HTTP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行服务"><span class="nav-number">1.2.4.</span> <span class="nav-text">运行服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP访问"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark集群配置"><span class="nav-number">1.4.</span> <span class="nav-text">Spark集群配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
