@@ -66,7 +66,7 @@ HBase中的数据分为元数据（文件索引）与文件本身数据，文件
 
 在conf文件夹中打开regionservers文件（如果未找到，新建即可）。添加如下内容：
 
-``` base
+``` bash
 node0的IP
 node1的IP
 node2的IP
@@ -75,7 +75,7 @@ node3的IP
 
 ## <font color=#c00>配置环境变量</font>
 
-``` base
+``` bash
 # Java环境变量是必不可少的。
 export JAVA_HOME=/opt/jdk1.8.0_65
 
@@ -93,7 +93,7 @@ export HBASE_PID_DIR=/opt/hbase-1.3.1/tmp
 
 将配置好的HBase文件夹拷贝到所有节点中
 
-``` base
+``` bash
 scp -r /opt/hbase-1.3.1 root@node0:/opt
 scp -r /opt/hbase-1.3.1 root@node1:/opt
 scp -r /opt/hbase-1.3.1 root@node2:/opt
@@ -103,7 +103,7 @@ scp -r /opt/hbase-1.3.1 root@node2:/opt
 
 在node3上执行如下命令：
 
-``` base
+``` bash
 bin/start-hbase.sh
 ```
 
@@ -113,23 +113,17 @@ bin/start-hbase.sh
 
 为了达到高可用，我们需要启动一个备用进程，按照规划图，在node2中运行如下命令：
 
-``` base
+``` bash
 bin/hbase-daemon.sh start master
 ```
 
 ## <font color=#c00>Web 访问</font>
 
 在浏览其中输入地址可以访问HMaster
-
-``` base
-node3的IP:16010
-```
+![master](/images/post/ai/hdp15.png)
 
 访问HRegionServer
-
-``` base
-node3的IP:16030
-```
+![regionserver](/images/post/ai/hdp16.png)
 
 ## <font color=#c00>测试</font>
 
@@ -137,7 +131,7 @@ node3的IP:16030
 
 在命令行中输入如下命令，进入hbase shell界面后，可执行一些基础操作。
 
-``` base
+``` bash
 bin/hbase shell
 ```
 
@@ -145,31 +139,31 @@ bin/hbase shell
 
 ### 创建表
 
-``` base
+``` bash
 create '表名', '列族'
 ```
 
 ### 查看所有表
 
-``` base
+``` bash
 list
 ```
 
 ### 查看表属性
 
-``` base
+``` bash
 describe '表名'
 ```
 
 ### 插入数据
 
-``` base
+``` bash
 put '表名', 'rowkey', '列族:列', '值'
 ```
 
 ### 查看表中所有数据
 
-``` base
+``` bash
 scan '表名'
 ```
 

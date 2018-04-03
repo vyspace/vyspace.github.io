@@ -27,3 +27,9 @@ date: 2017-12-06 10:30:03
 - #### [Spark 部署](/ai/hadoop-spk/)
 
 - #### [HBase 部署](/ai/hadoop-hbs/)
+
+- #### [Jupyter 部署](/ai/hadoop-jpt/)
+
+- #### [Thrift 部署](/ai/hadoop-thr/)
+
+- #### [Hadoop 附录](/ai/hadoop-add/)

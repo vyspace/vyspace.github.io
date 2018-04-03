@@ -273,7 +273,7 @@ sbin/start-dfs.sh
 
 正常启动HDFS服务后，再node1中使用jps命令看到NameNode，JournalNode，DFSZKFailoverController，DataNode服务。
 
-### 访问HTTP服务
+### HTTP访问HDFS服务
 
 通过IP地址:50070接口，在浏览器中正常访问到HDFS。
 ![hdfsweb](/images/post/ai/hdp14.png)
@@ -289,6 +289,11 @@ bin/hdfs haadmin -transitionToActive --forcemanual nn2
 ```
 
 <font color=#999>active状态：transitionToActive，standby状态：transitionToStandby</font>
+
+### HTTP访问计算引擎
+
+通过IP地址:8088接口，在浏览器中正常访问到计算引擎。
+![jsyq](/images/post/ai/hdp18.png)
 
 ### 测试
 
