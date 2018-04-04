@@ -95,7 +95,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp20.png">
 <meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp22.png">
-<meta property="og:updated_time" content="2018-04-04T03:20:11.000Z">
+<meta property="og:updated_time" content="2018-04-04T06:53:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Word Count">
 <meta name="twitter:description" content="Word Count程序就像初学每种语言时要写的Hello World一样。他可以用来统计大段文章（可能是一本朗文字典那么厚的书）中相同单词出现的次数。当然除了统计相同词数量外，我们经常拿它来统计网站中大量的PV，UV。 所有的Spark程序可以在local模式下运行，也可以在cluster模式下运行。因为是第一次应用，我们会分别讲解这两种模式。以后的程序基本都是运行在集群模式。 Spark程序可">
@@ -459,6 +459,7 @@
 <p>编写好程序后，就可以像Java一样，打包成jar文件，提交给Spark进行计算了。如果忘记了如何提交任务，请查看<a href="/ai/hadoop-spk/">《Spark 部署》</a></p>
 <h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a><font color="#c00">Java</font></h2><font color="#c00">注：Java1.8，编辑器Spring Tool Suite</font>
 
+
 <p>最后我们编写word count的Java版本，这次我们使用MapReduce作为计算引擎。</p>
 <p>Java版本的文件会稍微多一些，文件结构如下图所示：</p>
 <p><img src="/images/post/ai/hdp22.png" alt="javampr"></p>
@@ -529,6 +530,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ai/hadoop-hnc/" rel="prev" title="统计HBase表纪录数">
+                统计HBase表纪录数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +621,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
