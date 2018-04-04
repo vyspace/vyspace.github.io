@@ -95,7 +95,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp17.png">
 <meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp19.png">
-<meta property="og:updated_time" content="2018-04-03T04:09:37.000Z">
+<meta property="og:image" content="https://vyspace.github.io/images/post/ai/hdp21.png">
+<meta property="og:updated_time" content="2018-04-04T03:20:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jupyter 部署">
 <meta name="twitter:description" content="Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。 Quick StartAnaconda安装Anaconda是Python的版本管理工具，登陆官方网站下载安装包，其安装文件分为Python3.x与Python2.7版本。">
@@ -470,6 +471,8 @@
 <font color="#c00">注：之前有提到启动Jupyter服务，我建议切换到非root账户，原因是在Jupyter Notebook中用户可以新建命令行终端，你用什么账户启动服务，这里新建的终端将会以什么账户登录。所以为了控制用户权限及系统安全的考虑，不建议使用root账户去启动服务。</font>
 
 <p><img src="/images/post/ai/hdp19.png" alt="noroot"></p>
+<p>因为我们用test账户启动Jupyter服务，所以下图可以看到命令行窗口默认test用户登录。</p>
+<p><img src="/images/post/ai/hdp21.png" alt="cmd"></p>
 <h2 id="Spark集群配置"><a href="#Spark集群配置" class="headerlink" title="Spark集群配置"></a><font color="#c00">Spark集群配置</font></h2><p>为了让我们的jupyter可以访问Sprak集群去计算任务，我们还需要配置PySpark，<a href="http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/" target="_blank" rel="noopener">请点击此处查看</a>具体配置教程</p>
 <p>因为配置过后时间隔的太久，记得不是很清楚了，可以试试如下命令，启动集群</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --profile=pyspark &gt;/home/<span class="built_in">test</span>/.jupyter_out/jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
@@ -626,7 +629,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
