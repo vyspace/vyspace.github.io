@@ -14,5 +14,8 @@ date: 2018-04-03 15:37:03
 
 - #### [Word Count](/ai/hadoop-wct/)
 
+- #### [统计HBase中表纪录数](/ai/hadoop-hnc/)
+
+- #### [CSV导入HBase](/ai/hadoop-cth/)
 
 <!--more-->

@@ -153,6 +153,7 @@ Scala程序非常简洁，它提供了很多API，能够快速有效的帮助我
 
 <font color=#c00>注：Java1.8，编辑器Spring Tool Suite</font>
 
+
 最后我们编写word count的Java版本，这次我们使用MapReduce作为计算引擎。
 
 Java版本的文件会稍微多一些，文件结构如下图所示：
