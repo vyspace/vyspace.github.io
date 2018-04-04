@@ -119,6 +119,10 @@ nohup jupyter notebook >/home/test/.jupyter_out/jupyter.log 2>&1 &
 
 ![noroot](/images/post/ai/hdp19.png)
 
+因为我们用test账户启动Jupyter服务，所以下图可以看到命令行窗口默认test用户登录。
+
+![cmd](/images/post/ai/hdp21.png)
+
 ## <font color=#c00>Spark集群配置</font>
 
 为了让我们的jupyter可以访问Sprak集群去计算任务，我们还需要配置PySpark，[请点击此处查看](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/)具体配置教程
