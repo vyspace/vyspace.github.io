@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[KOA 全站[系列]]]></title>
+    <url>%2Fkoa%2Fkoa-start%2F</url>
+    <content type="text"><![CDATA[前言这个系列我们将使用KOA框架做一个小型的商业项目，项目虽然不大，但涵盖了很多内容，从应用层出发，考虑企业级项目是如何开发的，它与个人项目的区别，从技术层出发包括如何在NodeJS环境下搭建完整的网站服务器应用架构，持久层的建设，异步环境中的异常处理，接口层的创建，PC页面以及移动端应用的开发等等。 目录 代码质量控制]]></content>
+      <categories>
+        <category>koa</category>
+      </categories>
+      <tags>
+        <tag>全栈</tag>
+        <tag>NodeJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[代码质量控制]]></title>
+    <url>%2Fkoa%2Fkoa-quality%2F</url>
+    <content type="text"><![CDATA[所有项目开始前，我都习惯先设置ESLint，帮助我们的代码在整个团队中有一个统一的编写格式，方便查看，减少错误。 Quick Start创建项目项目结构在自己的工作目录创建项目文件夹，这里叫做test，目录结构如下： test&emsp;|— 服务端&emsp;|— 移动端&emsp;|— 爬虫&emsp;|— 小程序&emsp;|— 其他 初始化在test根目录下初始化项目： 1npm init 如果你使用git作为版本管理工具，可以在项目初始化时，填写仓库地址。 安装 ESLint代码质量控制的工具有很多，JSLint，JSHint等等，这里我习惯使用ESLint。 标准选择官方提供了3种预安装包： Google标准 1npm install eslint eslint-config-google -g Airbnb标准 它依赖eslint, eslint-plugin-import, eslint-plugin-react, eslint-plugin-jsx-a11y插件，并且对各个插件的版本有所要求。你可以执行以下命令查看所依赖的各个版本： 1npm info "eslint-config-airbnb@latest" peerDependencies 输出信息，包含了每个plugin的版本要求 1234&#123; eslint: '^4.9.0', 'eslint-plugin-import': '^2.7.0', 'eslint-plugin-jsx-a11y': '^6.0.2', 'eslint-plugin-react': '^7.4.0' &#125; 用如下命令执行安装： 1npm install eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.# -g Standard标准 1npm install eslint-config-standard eslint-plugin-standard eslint-plugin-promise -g 这里我推荐把eslint相关的包都安装在全局目录中。因为后面我们会用到React相关的东东，所以这里选择Airbnb标准。 NPM包安装建议这里我想说明下npm包的安装建议，本文推荐大部分包都安装在全局npm仓库中，将全局仓库作为本地公用仓库，类似Maven的本地仓。自己开发的包也可以安装在本地公共仓库中，方便其他项目调用，也减少副本量。如果专门为本项目开发的包或者必须在项目内调用，又或者你对某着第三方包做了一些修改，那么可以将其放在项目内仓库。 eslintrc 配置这里配置你的习惯用法，下面是我习惯使用的配置项。 123456789101112131415161718192021222324252627282930&#123; "extends": "airbnb", "rules": &#123; "comma-dangle": ["error", "never"], "strict": 0, "indent": ["error", 4, &#123; "SwitchCase": 1 &#125;], "no-useless-constructor": 0, "no-undef": 0, "react/prefer-stateless-function": 0, "one-var": 0, "keyword-spacing": 0, "brace-style": ["error", "stroustrup"], "no-else-return": 0, "wrap-iife": [2, "inside", &#123; "functionPrototypeMethods": true &#125;], "import/newline-after-import": 0, "class-methods-use-this": 0, "no-underscore-dangle": 0, "no-restricted-syntax": [0, "BinaryExpression[operator='of']"], "global-require": 0, "no-param-reassign": 0, "no-new-func": 0, "max-len": 0, "consistent-return": 0, "import/no-extraneous-dependencies": 0, "import/no-unresolved": 0, "import/no-dynamic-require": 0, "react/jsx-indent": 0, "react/forbid-prop-types": 0 &#125;&#125; 配置好后，保存为eslintrc.json文件并将其放在项目的根目录。 WebStorm 配置因为本项目使用WebStorm进行开发，所以需要配置下WebStorm的ESLint。 我这里使用的是macos版，依次选择如下菜单： 菜单栏WebStorm &gt; Preferences &gt; Languages &amp; Frameworks &gt; JavaScript &gt; Code Quality Tools &gt; ESLint 注：ESLint的Enable勾选，该项目下的其他质量工具取消Enable选项。 小结这节我们讲了下如何引入代码质量检测工具，帮助我们规范代码，检测编写错误。下节我们开始《》 本系列文章《目录》]]></content>
+      <categories>
+        <category>koa</category>
+      </categories>
+      <tags>
+        <tag>全栈</tag>
+        <tag>NodeJS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSV导入HBase]]></title>
     <url>%2Fai%2Fhadoop-cth%2F</url>
     <content type="text"><![CDATA[大数据分析中，都会用到csv数据文件，这篇文章我们讲讲如何将csv中的数据导入到hbase中，方便数据的查看，计算。也方便在后续的程序中可以直接从数据库中读取数据。 下面的程序实现了如下功能： 将csv文件从本地上传到hdfs文件系统中。 在hbase中创建表。 把hdfs中的csv数据导入新建的表中。 执行每一步，打印出提示信息。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165import osimport sysimport subprocessfrom thrift import Thriftfrom thrift.transport import TSocket, TTransportfrom thrift.protocol import TBinaryProtocolfrom hbase import Hbasefrom hbase.ttypes import *# 环境变量获取hadoop_home = os.environ.get('HADOOP_HOME')# jupyter_notebook 工作区根目录jn_home = os.environ.get('JN_HOME')hbase_home = os.environ.get('HBASE_HOME')# ============用户参数设置开始============file_name = 'csv文件名'table_name = '要新建的表名'# hdfs中csv已存在选项# 1: 跳过此处，不再上传文件，但继续执行后面的代码。# 2: 停止执行后面的代码。# 3: 删除已存在的文件，重新上传后，继续执行后面的代码。hdfs_exist_flag = 3 # 表存在选项# True: 删除已有表，创建新表。# False: 程序停止。用户自己决定是否手动删处理。hbase_exist_flag = True# ===============设置完成================# 参数设置检测if file_name == '' or table_name== '': print '参数设置不能为空' sys.exit(1)# 检测本地文件是否存在# 可以指定任意本地路径，这里我把所有数据文件放在jupyter工作根目录的Local_Data下，方便管理及多人共享。local_file_path = '%s/Local_Data/%s' % (jn_home, file_name)if os.path.exists(local_file_path): print '本地文件存在, 正在检测HBase'else: print '本地文件不存在' sys.exit(1)# 检测HBase中表是否存在hm_ip = 'node3的IP'hm_port = 9090transport = TSocket.TSocket(hm_ip, hm_port)transport = TTransport.TBufferedTransport(transport)protocol = TBinaryProtocol.TBinaryProtocol(transport)client = Hbase.Client(protocol)transport.open()# 试图创建表，如果已存在，则会跳入异常try: print "试图创建表" # 创建表时，把cf列族的版本数设为1 contents = ColumnDescriptor(name='cf:', maxVersions=1) client.createTable(table_name, [contents])except: if hbase_exist_flag: print "表[%s]已存在，正在删除表" % table_name # hbase中的表，停用后才能删除 client.disableTable(table_name) client.deleteTable(table_name) contents = ColumnDescriptor(name='cf:', maxVersions=1) client.createTable(table_name, [contents]) # 创建成功后，打印出所有表名 print "表创建成功，列表如下：" table_name_list = client.getTableNames() for line in table_name_list: print line.strip() transport.close() else: print '表[%s]已经存在，请重新命名' % table_name sys.exit(1)else: print "表创建成功，列表如下：" table_name_list = client.getTableNames() for line in table_name_list: print line.strip() transport.close()hdfs_file_path = '/hfile/data/%s' % file_name# 导入hbasedef hbaseImport(): print "开始导入数据" # 按照csv中的字段定义导入表带规则 # 此时字段1将被用做HBASE_ROW_KEY rule = 'HBASE_ROW_KEY,cf:字段2,cf:字段3, ...' # 这里需要使用到hadoop提供的ImportTsv类，帮助我们进行导入。 cmd = '%s/bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator="," -Dimporttsv.columns=%s %s %s &amp;&amp; echo $?' % (hbase_home, rule, table_name, hdfs_file_path) p = subprocess.Popen(cmd, shell=True, stdout = subprocess.PIPE ) out = p.stdout.readlines() # 导入成功后，打印第一条纪录 if len(out) &gt; 0: print "导入成功, 第一条内容如下：" transport.open() id = client.scannerOpen(table_name, '1', None) result = client.scannerGetList(id, 1) client.scannerClose(id) transport.close() for line in result: print line else: print "导入失败" sys.exit(1)# 上传csvdef uploadHDFS(): print "开始文件上传" cmd = '%s/bin/hadoop fs -put %s /hfile/data' % (hadoop_home, local_file_path) p = subprocess.Popen(cmd, shell=True, stderr = subprocess.PIPE ) out = p.stderr.readlines() if len(out) &gt; 0: for line in out: print line.strip() sys.exit(1) else: print "上传成功, 试图导入数据" hbaseImport()# 删除hdfs中的文件def deleteHDFS(): print "文件已存在，开始删除文件[%s]" % file_name cmd = '%s/bin/hadoop fs -rm -f %s &amp;&amp; echo $?' % (hadoop_home, hdfs_file_path) p = subprocess.Popen(cmd, shell=True, stdout = subprocess.PIPE ) out = p.stdout.readlines() if len(out) &gt; 0: print "删除成功, 试图上传文件" uploadHDFS() else: print "删除失败" sys.exit(1)# 测试hdfs中指定的文件是否存在 def testHDFS(): cmd = '%s/bin/hadoop fs -test -e %s &amp;&amp; echo $?' % (hadoop_home, hdfs_file_path) p = subprocess.Popen(cmd, shell=True, stdout = subprocess.PIPE ) out = p.stdout.readlines() if len(out) &gt; 0: if hdfs_exist_flag == 1: print "文件已存在, 试图导入数据" hbaseImport() elif hdfs_exist_flag == 2: print "文件已存在，请删除HDFS文件或重命名后，重新执行" sys.exit(1) elif hdfs_exist_flag == 3: deleteHDFS() else: print "hdfs_exist_flag参数设置有误" sys.exit(1) else: uploadHDFS() testHDFS()sys.exit(0) 执行完成后，会在Jupyter中打印如下信息： 本系列文章《目录》]]></content>
@@ -152,18 +176,6 @@
       </categories>
       <tags>
         <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[KOA 开始]]></title>
-    <url>%2Fkoa%2Fkoa-start%2F</url>
-    <content type="text"><![CDATA[更新中…]]></content>
-      <categories>
-        <category>koa</category>
-      </categories>
-      <tags>
-        <tag>NodeJS</tag>
-        <tag>全栈</tag>
       </tags>
   </entry>
   <entry>
