@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="前端,SPA," />
+  <meta name="keywords" content="大数据," />
 
 
 
@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="更新中…">
-<meta name="keywords" content="前端,SPA">
+<meta name="description" content="“GBDT和XGBoost在竞赛和工业界使用都非常频繁，能有效的应用到分类、回归、排序问题，虽然使用起来不难，但是要能完整的理解还是有一点麻烦的。本文尝试一步一步梳理GB、GBDT、XGBoost，它们之间有非常紧密的联系，GBDT是以决策树（CART）为基学习器的GB算法，XGBoost扩展和改进了GDBT，XGBoost算法更快，准确率也相对高一些。”，上面这句话引用自《一步一步理解GB、GB">
+<meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReactJS 开始">
-<meta property="og:url" content="https://vyspace.github.io/react/reactjs-start/index.html">
+<meta property="og:title" content="XGBoost 部署">
+<meta property="og:url" content="https://vyspace.github.io/ai/hadoop-xgb/index.html">
 <meta property="og:site_name" content="Evan Z">
-<meta property="og:description" content="更新中…">
+<meta property="og:description" content="“GBDT和XGBoost在竞赛和工业界使用都非常频繁，能有效的应用到分类、回归、排序问题，虽然使用起来不难，但是要能完整的理解还是有一点麻烦的。本文尝试一步一步梳理GB、GBDT、XGBoost，它们之间有非常紧密的联系，GBDT是以决策树（CART）为基学习器的GB算法，XGBoost扩展和改进了GDBT，XGBoost算法更快，准确率也相对高一些。”，上面这句话引用自《一步一步理解GB、GB">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T09:23:35.000Z">
+<meta property="og:updated_time" content="2018-04-09T08:37:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReactJS 开始">
-<meta name="twitter:description" content="更新中…">
+<meta name="twitter:title" content="XGBoost 部署">
+<meta name="twitter:description" content="“GBDT和XGBoost在竞赛和工业界使用都非常频繁，能有效的应用到分类、回归、排序问题，虽然使用起来不难，但是要能完整的理解还是有一点麻烦的。本文尝试一步一步梳理GB、GBDT、XGBoost，它们之间有非常紧密的联系，GBDT是以决策树（CART）为基学习器的GB算法，XGBoost扩展和改进了GDBT，XGBoost算法更快，准确率也相对高一些。”，上面这句话引用自《一步一步理解GB、GB">
 
 
 
@@ -126,14 +126,14 @@
 
 
 
-  <link rel="canonical" href="https://vyspace.github.io/react/reactjs-start/"/>
+  <link rel="canonical" href="https://vyspace.github.io/ai/hadoop-xgb/"/>
 
 
 
 
 
 
-  <title>ReactJS 开始 | Evan Z</title>
+  <title>XGBoost 部署 | Evan Z</title>
   
 
 
@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/react/reactjs-start/">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-xgb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Evan Zheng">
@@ -351,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ReactJS 开始</h1>
+          <h1 class="post-title" itemprop="name headline">XGBoost 部署</h1>
         
 
         <div class="post-meta">
@@ -363,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-16T15:35:00+08:00">
-                2016-06-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T10:10:35+08:00">
+                2018-04-09
               </time>
             
 
@@ -386,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/ai/" itemprop="url" rel="index">
+                    <span itemprop="name">ai</span>
                   </a>
                 </span>
 
@@ -404,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/react/reactjs-start/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/react/reactjs-start/" itemprop="commentsCount"></span>
+                <a href="/ai/hadoop-xgb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/ai/hadoop-xgb/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -433,7 +433,33 @@
       
 
       
-        <p>更新中…</p>
+        <p>“GBDT和XGBoost在竞赛和工业界使用都非常频繁，能有效的应用到分类、回归、排序问题，虽然使用起来不难，但是要能完整的理解还是有一点麻烦的。本文尝试一步一步梳理GB、GBDT、XGBoost，它们之间有非常紧密的联系，GBDT是以决策树（CART）为基学习器的GB算法，XGBoost扩展和改进了GDBT，XGBoost算法更快，准确率也相对高一些。”，上面这句话引用自<a href="https://www.cnblogs.com/wxquare/p/5541414.html" target="_blank" rel="noopener">《一步一步理解GB、GBDT、XGBoost》</a>，个人觉的很好的对比了几种算法的不同，更好的理解XGBoost，有兴趣的同学可以看看。</p>
+<p>经测试用GBDT(Gradient Boosting Decision Tree)在Spark上需要10小时才能训练出的数据量，XGBoost仅仅只用了一半的集群资源，10分钟就搞定了。真实速度惊人，为了进一步发挥Spark的潜能，这篇文章我们讲讲如何把XGBoost部署在分布式环境中。</p>
+<p>因为Jupyter安装在node0中，所以我们在node0节点上安装XGBoost。root用户登录此节点。</p>
+<a id="more"></a>
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="安装-GCC"><a href="#安装-GCC" class="headerlink" title="安装 GCC"></a><font color="#c00">安装 GCC</font></h2><p>下载gcc源码包，并解压，进入该目录</p>
+<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure --<span class="built_in">enable</span>-checking=release --<span class="built_in">enable</span>-languages=c,c++ --<span class="built_in">disable</span>-multilib</span><br></pre></td></tr></table></figure>
+<font color="#999">你可以最后加–prefix=/自定义安装路径，执行文件最后安装在/自定义安装路径/bin下</font>
+
+<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j10</span><br></pre></td></tr></table></figure>
+<font color="#999">-j后面的数字指定CPU用多少个线程运行这次任务，线程数要小于等于实际线程数，如果-j后面不指定数字，将会使用全部线程运行次任务</font>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>本文使用的是 gcc version 4.8.5</p>
+<h2 id="安装-CMake"><a href="#安装-CMake" class="headerlink" title="安装 CMake"></a><font color="#c00">安装 CMake</font></h2><p>下载cmake的源码包，安装方法与gcc安装相同。本文使用的是cmake version 3.10.1</p>
+<h2 id="编译-libhdfs"><a href="#编译-libhdfs" class="headerlink" title="编译 libhdfs"></a><font color="#c00">编译 libhdfs</font></h2><p>libhdfs主要用于XGBoost访问HDFS文件系统。</p>
+<p>在<a href="https://github.com/cloudera/hadoop-common" target="_blank" rel="noopener">hadoop-common</a>，下载最近发布版，下载完成后进入hadoop-hdfs-project/hadoop-hdfs/src，编辑：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmake -DGENERATED_JAVAH=/opt/jdk1.8.0_65 -DJAVA_HOME=/opt/jdk1.8.0_65</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>将编译完成的文件，拷贝到xgboost-packages中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/<span class="built_in">local</span>/lib ／opt/xgboost-packages/libhdfs</span><br></pre></td></tr></table></figure>
+<h2 id="安装-XGBoost"><a href="#安装-XGBoost" class="headerlink" title="安装 XGBoost"></a><font color="#c00">安装 XGBoost</font></h2><p>它支持Python，R，Julia，Scala 4种语言。本文介绍Python的安装和使用。</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>root用户登录，下载<a href="https://github.com/dmlc/xgboost/tree/master/python-package" target="_blank" rel="noopener">python-package</a>，我们把文件包依然放在/opt目录下。下载完后进入/python-package/xgboost文件夹，拷贝配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp make/config.mk ./</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>修改./config.mk文件配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用HDFS文件系统</span></span><br><span class="line">USE_HDFS = 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定hadoop环境变量</span></span><br><span class="line">HADOOP_HOME = /opt/hadoop-2.7.4</span><br><span class="line"></span><br><span class="line"><span class="comment"># hadoop为C/C++访问分布式文件系统提供的JNI接口</span></span><br><span class="line">HDFS_LIB_PATH = /opt/hadoop_suite/xgboost-packages/libhdfs</span><br></pre></td></tr></table></figure>
+<h3 id="编译-1"><a href="#编译-1" class="headerlink" title="编译"></a>编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j10</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><font color="#c00">小结</font></h2><p>完成上述配置后，XGBoost就可以在Spark集群中运行了。你也可以参考<a href="http://xgboost.readthedocs.io/en/latest/build.html" target="_blank" rel="noopener">《官方文档》</a>，查看单机安装教程。下篇<a href="/ai/hadoop-add/">《Hadoop 附录》</a></p>
+<p>本系列文章<a href="/ai/hadoop-start/">《目录》</a></p>
 
       
     </div>
@@ -454,7 +480,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://vyspace.github.io/react/reactjs-start/" title="ReactJS 开始">https://vyspace.github.io/react/reactjs-start/</a>
+    <a href="https://vyspace.github.io/ai/hadoop-xgb/" title="XGBoost 部署">https://vyspace.github.io/ai/hadoop-xgb/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -469,9 +495,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-            <a href="/tags/SPA/" rel="tag"># SPA</a>
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
           
         </div>
       
@@ -484,14 +508,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/koa/koa-start/" rel="next" title="KOA 全站[系列]">
+                <i class="fa fa-chevron-left"></i> KOA 全站[系列]
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/nbatis/nbatis-start/" rel="prev" title="NBatis 开始">
-                NBatis 开始 <i class="fa fa-chevron-right"></i>
+              <a href="/ai/hadoop-xgbc/" rel="prev" title="XGBoost Client">
+                XGBoost Client <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -551,8 +579,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -632,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-GCC"><span class="nav-number">1.1.</span> <span class="nav-text">安装 GCC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检测"><span class="nav-number">1.1.1.</span> <span class="nav-text">检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译"><span class="nav-number">1.1.2.</span> <span class="nav-text">编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.3.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-CMake"><span class="nav-number">1.2.</span> <span class="nav-text">安装 CMake</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译-libhdfs"><span class="nav-number">1.3.</span> <span class="nav-text">编译 libhdfs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-XGBoost"><span class="nav-number">1.4.</span> <span class="nav-text">安装 XGBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">1.4.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置"><span class="nav-number">1.4.2.</span> <span class="nav-text">修改配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译-1"><span class="nav-number">1.4.3.</span> <span class="nav-text">编译</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

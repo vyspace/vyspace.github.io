@@ -333,6 +333,451 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-xgby/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evan Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evan Z">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/ai/hadoop-xgby/" itemprop="url">XGBoost Yarn</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T14:05:15+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ai/" itemprop="url" rel="index">
+                    <span itemprop="name">ai</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>XGBoost是不支持分布式计算的，所以为了让我们的代码可以运行在Spark的集群中，这里我们引入了XGBoost4J，这是一个Java版本。下面我们就来看看如何安装并使用XGBoost4J。</p>
+<font color="#c00">注：XGBoost4J是我们编译后产生的一个jar包，我们会使用这个jar包中的API进行开发。编译此jar包坑很多，这里有几点需要注意。使用Maven在Linux环境（与Spark环境相同的操作系统）下进行编译，切记不要用IDE在MacOS或Windows环境中编译jar包，编译后因为jni的问题，在Spark的集群模式下无法运行，或运行中断。</font>
+
+<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a><font color="#c00">Maven</font></h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ai/hadoop-xgby/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-xgbc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evan Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evan Z">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/ai/hadoop-xgbc/" itemprop="url">XGBoost Client</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T11:35:23+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ai/" itemprop="url" rel="index">
+                    <span itemprop="name">ai</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这篇文章我们主要测试下，之前部署好的XGBoost。</p>
+<p>我们使用Jupyter编写代码，使用单机模式在Spark中运行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 生成随机样本位于[0, 1)中</span></span><br><span class="line"><span class="comment"># 生成一个5行10列的数组，作为样本数据。</span></span><br><span class="line">data = np.random.rand(<span class="number">5</span>,<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 生成目标数据</span></span><br><span class="line">label = np.random.randint(<span class="number">2</span>, size=<span class="number">5</span>)</span><br><span class="line">dtrain = xgb.DMatrix(data, label=label)</span><br><span class="line">dtest = dtrain</span><br><span class="line">param = &#123;<span class="string">'bst:max_depth'</span>:<span class="number">2</span>, <span class="string">'bst:eta'</span>:<span class="number">1</span>, <span class="string">'silent'</span>:<span class="number">1</span>, <span class="string">'objective'</span>:<span class="string">'binary:logistic'</span> &#125;</span><br><span class="line">param[<span class="string">'nthread'</span>] = <span class="number">4</span></span><br><span class="line">param[<span class="string">'eval_metric'</span>] = <span class="string">'auc'</span> </span><br><span class="line">evallist  = [(dtest,<span class="string">'eval'</span>), (dtrain,<span class="string">'train'</span>)]</span><br><span class="line">num_round = <span class="number">10</span></span><br><span class="line">bst = xgb.train( param, dtrain, num_round, evallist )</span><br><span class="line">bst.dump_model(<span class="string">'dump.raw.txt'</span>)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ai/hadoop-xgbc/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-xgb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Evan Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Evan Z">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/ai/hadoop-xgb/" itemprop="url">XGBoost 部署</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T10:10:35+08:00">
+                2018-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ai/" itemprop="url" rel="index">
+                    <span itemprop="name">ai</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>“GBDT和XGBoost在竞赛和工业界使用都非常频繁，能有效的应用到分类、回归、排序问题，虽然使用起来不难，但是要能完整的理解还是有一点麻烦的。本文尝试一步一步梳理GB、GBDT、XGBoost，它们之间有非常紧密的联系，GBDT是以决策树（CART）为基学习器的GB算法，XGBoost扩展和改进了GDBT，XGBoost算法更快，准确率也相对高一些。”，上面这句话引用自<a href="https://www.cnblogs.com/wxquare/p/5541414.html" target="_blank" rel="noopener">《一步一步理解GB、GBDT、XGBoost》</a>，个人觉的很好的对比了几种算法的不同，更好的理解XGBoost，有兴趣的同学可以看看。</p>
+<p>经测试用GBDT(Gradient Boosting Decision Tree)在Spark上需要10小时才能训练出的数据量，XGBoost仅仅只用了一半的集群资源，10分钟就搞定了。真实速度惊人，为了进一步发挥Spark的潜能，这篇文章我们讲讲如何把XGBoost部署在分布式环境中。</p>
+<p>因为Jupyter安装在node0中，所以我们在node0节点上安装XGBoost。root用户登录此节点。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/ai/hadoop-xgb/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/koa/koa-start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1364,450 +1809,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-thr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Evan Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/profile.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Evan Z">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/ai/hadoop-thr/" itemprop="url">Thrift 部署</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T11:15:16+08:00">
-                2018-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ai/" itemprop="url" rel="index">
-                    <span itemprop="name">ai</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Thrift服务是帮助Jupyter Notebook访问HBase，安装后我们就可以在程序中直接访问HBase了。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a><font color="#c00">下载安装</font></h2><p>按照之前的规划表，我们会在node3中启动Thrift服务，所以在这篇文章我们选择在node3中进行配置安装。</p>
-<p>登陆<a href="http://thrift.apache.org/" target="_blank" rel="noopener">官方网站</a>下载Thrift安装包，版本0.10.0，下载完成后解压并进入该文件夹。</p>
-<p>运行如下命令进行安装：</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/ai/hadoop-thr/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-jpt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Evan Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/profile.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Evan Z">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/ai/hadoop-jpt/" itemprop="url">Jupyter 部署</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T16:56:20+08:00">
-                2018-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ai/" itemprop="url" rel="index">
-                    <span itemprop="name">ai</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Jupyter Notebook 是一个Python在线编辑器，在机器学习领域很流行，调试代码也很方便。当然你可以选择其他编辑器。因为后面的示例会有一部分使用Python完成，所以这篇我们来部署Jupyter。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a><font color="#c00">Anaconda</font></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Anaconda是Python的版本管理工具，登陆<a href="https://www.anaconda.com/" target="_blank" rel="noopener">官方网站</a>下载安装包，其安装文件分为Python3.x与Python2.7版本。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/ai/hadoop-jpt/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vyspace.github.io/ai/hadoop-hbs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Evan Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/profile.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Evan Z">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/ai/hadoop-hbs/" itemprop="url">HBase 部署</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T11:36:18+08:00">
-                2018-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ai/" itemprop="url" rel="index">
-                    <span itemprop="name">ai</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>完成之前的章节，我们已经将Hadoop集群与Spark计算引擎成功部署在4个节点中了。你可以使用Java或者Scala语言（这里推荐Scala）进行开发，并可以用Spark正常进行数据挖掘了。这章我们讲HBase的部署，基本与数据存储有关。</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a><font color="#c00">下载安装</font></h2><p>按照之前的规划表，我们会在node3中启动HBase的主进程，在node2中启动备用进程，所以在这篇文章我们选择在node3中进行配置。</p>
-<p>登陆node3节点，并下载HBase安装包，版本1.3.1，下载完成后解压（文件目录还是统一放在/opt路径下）并进入该文件夹。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/ai/hadoop-hbs/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1862,7 +1863,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
