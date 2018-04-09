@@ -32,4 +32,6 @@ date: 2017-12-06 10:30:03
 
 - #### [Thrift 部署](/ai/hadoop-thr/)
 
+- #### [XGBoost 部署](/ai/hadoop-xgb/)
+
 - #### [Hadoop 附录](/ai/hadoop-add/)

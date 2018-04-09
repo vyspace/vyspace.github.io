@@ -19,3 +19,8 @@ date: 2018-04-03 15:37:03
 - #### [CSV导入HBase](/ai/hadoop-cth/)
 
 <!--more-->
+
+- #### [XGBoost Client](/ai/hadoop-xgbc/)
+
+- #### [XGBoost Yarn](/ai/hadoop-xgby/)
+

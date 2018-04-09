@@ -81,6 +81,6 @@ transport.close()
 
 ## <font color=#c00>小结</font>
 
-完成上述配置后，我们可以通过Python程序访问HBase了。下篇[《Hadoop 附录》](/ai/hadoop-add/)
+完成上述配置后，我们可以通过Python程序访问HBase了。下篇[《XGBoost 部署》](/ai/hadoop-xgb/)
 
 本系列文章[《目录》](/ai/hadoop-start/)
